@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+    <div class="col-md-12">
+        <h1 style="color: black;">Buscar Marca</h1>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+        <form class="d-flex" role="search">
+            <input #nombreInput class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Buscar">
+            <button class="btn btn-outline-success" type="submit" (click)="buscarProductos(nombreInput.value)">Buscar</button>
+        </form>
+    </div>
+    </div>
+    <div class="container-transparente">
+    <div class="col-md-12">
+        <div class="container-transparente">
+          <div class="card" *ngFor="let producto of listacatalogo">
+            <div class="card-body">
+            <h5 class="card-title">Nombre: {{ producto.nombre }}</h5>
+            <p class="card-text">Propietario: {{ producto.propietario }}</p>
+            <p class="card-text">Telefono: {{ producto.tel }}</p>
+            <p class="card-text">RFC: {{ producto.rfc }}</p>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>

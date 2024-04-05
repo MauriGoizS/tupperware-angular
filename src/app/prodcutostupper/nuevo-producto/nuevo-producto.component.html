@@ -1,0 +1,128 @@
+<div class="container-transparente">
+    <h2>Formulario de Producto</h2>
+    <form>
+        <div class="row">
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" required [(ngModel)]="miproducto.nombre" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" class="form-control" id="modelo" [(ngModel)]="miproducto.modelo" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="altura">Altura:</label>
+                    <input type="number" class="form-control" id="altura" [(ngModel)]="miproducto.dimensiones.altura" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="capacidad">Capacidad:</label>
+                    <input type="number" class="form-control" id="capacidad" [(ngModel)]="miproducto.dimensiones.capacidad" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="foto">Foto:</label>
+                    <input type="file" class="form-control-file" accept="image/*" (change)="convertir_B64($event)" id="foto">
+                </div>
+                <div class="form-group">
+                    <label for="Clasificación">Clasificación:</label>
+                    <select id="Clasificación" class="form-control" [(ngModel)]="miproducto.clasificacion.nomClasificacion" [ngModelOptions]="{standalone: true}">
+                        <option value="Lunch">Lunch</option>
+                        <option value="Mesa">Mesa</option>
+                        <option value="Cocina">Cocina</option>
+                        <option value="Conservación">Conservación</option>
+                        <option value="niños">Niños</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea class="form-control" id="descripcion" rows="3" [(ngModel)]="miproducto.clasificacion.Descripcion" [ngModelOptions]="{standalone: true}"></textarea>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4">
+            
+                <div class="form-group">
+                    <label for="costo">Costo:</label>
+                    <input type="number" class="form-control" id="costo" step="0.01" value="0" [(ngModel)]="miproducto.costo" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="ancho">Ancho:</label>
+                    <input type="number" class="form-control" id="ancho" [(ngModel)]="miproducto.dimensiones.ancho" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="num_piezas">Número de piezas:</label>
+                    <input type="number" class="form-control" id="num_piezas" value="0" [(ngModel)]="miproducto.numeroDePiezas" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="fecha_adquisicion">Fecha Adquisición:</label>
+                    <input type="date" class="form-control" id="fecha_adquisicion" [(ngModel)]="miproducto.fechaAdquisicion" [ngModelOptions]="{standalone: true}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Color:</label><br>
+                    <div class="form-check form-check-inline" *ngFor="let color of opcionesColores">
+                        <input class="form-check-input" type="checkbox" [id]="color.toLowerCase()" [value]="color" [checked]="coloresSeleccionados.includes(color)" (change)="seleccionarColor(color)" name="colors">
+                        <label class="form-check-label" [for]="color.toLowerCase()">{{ color }}</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="largo">Largo:</label>
+                    <input type="number" class="form-control" id="largo" [(ngModel)]="miproducto.dimensiones.largo" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select id="status" class="form-control" [(ngModel)]="miproducto.status" [ngModelOptions]="{standalone: true}">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ciudadanos_recomendados">Ciudadanos Recomendados:</label>
+                    <input type="number" class="form-control" id="ciudadanos_recomendados" [(ngModel)]="miproducto.ciudadanosRecomendados" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="material_fabricacion">Material de Fabricación:</label>
+                    <select id="material_fabricacion" class="form-control" [(ngModel)]="miproducto.materialFabricacion" [ngModelOptions]="{standalone: true}">
+                        <option value="plastico">Plástico</option>
+                        <option value="metal">Metal</option>
+                        <option value="cristal">Cristal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pais_origen">País de Origen:</label>
+                    <select id="pais_origen" class="form-control" [(ngModel)]="miproducto.paisOrigen" [ngModelOptions]="{standalone: true}">
+                        <option value="taiwana">Taiwán</option>
+                        <option value="mexico">México</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="proveedor">Proveedor:</label>
+                    <select id="proveedor" class="form-control" [(ngModel)]="miproducto.proveedorId" [ngModelOptions]="{standalone: true}">
+                        <option value="osvaldo">Osvaldo</option>
+                        <option value="kevin">Kevin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <select id="marca" class="form-control" [(ngModel)]="miproducto.marcaId" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let m of listaMarcas" [value]="m._id">{{m.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" class="form-control" [(ngModel)]="miproducto.estado" [ngModelOptions]="{standalone: true}">
+                        <option value="Roto">Roto</option>
+                        <option value="Completo">Completo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button class="me-2 btn btn-outline-dark" (click)="enviarProd()">Crear producto</button>
+    </form>
+</div>

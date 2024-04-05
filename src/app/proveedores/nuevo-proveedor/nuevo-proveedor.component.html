@@ -1,0 +1,33 @@
+<div class="container-transparente mt-5">
+    <h2>Formulario de Proveedor</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="misproveedores.nombre" name="nombre" placeholder="Ingresa nombre del proveedor">
+        </div>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="activo" value="Activo" [(ngModel)]="misproveedores.estado" name="estado">
+                <label class="form-check-label" for="activo">
+                    Activo
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="inactivo" value="Inactivo" [(ngModel)]="misproveedores.estado" name="estado">
+                <label class="form-check-label" for="inactivo">
+                    Inactivo
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" [(ngModel)]="misproveedores.tel" name="telefono" placeholder="Ingresa teléfono del proveedor">
+        </div>
+        <div class="mb-3">
+            <label for="rfc" class="form-label">RFC</label>
+            <input type="text" class="form-control" id="rfc" [(ngModel)]="misproveedores.rfc" name="rfc" placeholder="Ingresa RFC del proveedor">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="enviarProd()">Enviar</button>
+    </form>
+</div>

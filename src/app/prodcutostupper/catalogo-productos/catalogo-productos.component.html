@@ -1,0 +1,82 @@
+
+<h1>
+    CATALOGO DE PRODUCTOS
+</h1>
+
+<br> 
+<br>
+
+
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped w-100  table-dark">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Nombre Clasificacion </th>  
+                    <th>Modelo</th>
+                    <th>Costo</th>
+                    <th>Precio</th>
+                    <th>Altura</th>
+                    <th>Ancho</th>
+                    <th>Largo</th>
+                    <th>Capacidad</th>
+                    <th>Número de piezas</th>
+                    <th>Color</th>
+                    <th>Fecha Adquisición</th>
+                    <th>Cantidad Existente</th>
+                    <th>Status</th>
+                    <th>Ciudadanos Recomendados</th>
+                    <th>Material de Fabricación</th>
+                    <th>País de Origen</th>
+                    <th>estado</th>
+                    <th>OPCINES</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí agregarás las filas con la información de tus componentes -->
+                <tr *ngFor="let producto of listacatalogo">
+                    <td><img src="{{ producto.foto }}" alt="Imagen del producto" class="imagen-pequena"></td>
+
+                    <td> {{ producto.nombre }}</td>
+                    <td>{{ producto.clasificacion.nomClasificacion }}</td>
+                    <td>{{ producto.modelo }}</td>
+                    <td>{{ producto.costo }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>{{ producto.dimensiones.altura }}</td>
+                    <td>{{ producto.dimensiones.ancho }}</td>
+                    <td>{{ producto.dimensiones.largo }}</td>
+                    <td>{{ producto.dimensiones.capacidad }}</td>
+                    <td>{{ producto.numeroDePiezas }}</td>
+                    <td>{{ producto.color }}</td>
+                    <td>{{ producto.fechaAdquisicion }}</td>
+                    <td>{{ producto.cantidadExistente }}</td>
+                    <td>{{ producto.status }}</td>
+                    <td>{{ producto.ciudadanosRecomendados }}</td>
+                    <td>{{ producto.materialFabricacion }}</td>
+                    <td>{{ producto.paisOrigen }}</td>
+                    <td>{{ producto.estado }}</td>
+                    <td> 
+                        <a [routerLink]="['/productoseliminar', producto._id]">
+                            <i class="fas fa-trash-alt" style="color: red;"></i> <!-- Icono de bote de basura rojo -->
+                        </a>
+                        <a [routerLink]="['/productosactualizar', producto._id]">
+                            <i class="fas fa-pencil-alt" style="color: blue;"></i> <!-- Icono de lápiz azul -->
+                        </a>
+                    </td>
+                    
+
+                    <!-- Agrega más celdas según sea necesario -->
+                </tr>
+
+                <!-- Agrega más filas según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

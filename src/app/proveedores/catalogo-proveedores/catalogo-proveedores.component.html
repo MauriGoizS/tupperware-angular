@@ -1,0 +1,47 @@
+
+<h1>
+    CATALOGO DE PROVEEDORES
+</h1>
+
+<br> 
+<br>
+
+
+<div class="container">
+    <div class="table-responsive">
+
+        <table class="table table-dark table-striped">
+            <thead >
+            <tr>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">TELEFONO</th>
+                <th scope="col">RFC</th>
+                <th scope="col">ESTADO</th>
+                <th scope="col">OPCIONES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proveedor of listacatproveedor">
+                
+                <td>{{ proveedor.nombre }}</td>
+                <td>{{ proveedor.tel }}</td>
+                <td>{{ proveedor.rfc }}</td>
+                <td>{{ proveedor.estado }}</td>
+                <td> 
+                    <a [routerLink]="['/proveedoreliminar', proveedor._id]">
+                        <i class="fas fa-trash-alt" style="color: red;"></i> <!-- Icono de bote de basura rojo -->
+                    </a>
+                    <a [routerLink]="['/proveedoractualizar', proveedor._id]">
+                        <i class="fas fa-pencil-alt" style="color: blue;"></i> <!-- Icono de lápiz azul -->
+                    </a>
+                </td>
+                
+                
+            </tr>
+            
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

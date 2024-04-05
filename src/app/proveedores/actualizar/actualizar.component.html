@@ -1,0 +1,25 @@
+<div class="container-transparente mt-5">
+    <h2>Actualizar Proveedor</h2>
+    <form *ngIf="proveedor">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="proveedor.nombre" name="nombre" placeholder="Ingresa nombre del proveedor" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-control" id="estado" [(ngModel)]="proveedor.estado" name="estado" [ngModelOptions]="{standalone: true}">
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" [(ngModel)]="proveedor.tel" name="telefono" placeholder="Ingresa teléfono del proveedor" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="rfc" class="form-label">RFC</label>
+            <input type="text" class="form-control" id="rfc" [(ngModel)]="proveedor.rfc" name="rfc" placeholder="Ingresa RFC del proveedor" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="actualizarProveedor()">Actualizar</button>
+    </form>
+</div>

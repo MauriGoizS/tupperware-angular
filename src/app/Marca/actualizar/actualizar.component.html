@@ -1,0 +1,22 @@
+<div class="container-transparente mt-5">
+    <h2>Actualizar Marca</h2>
+    <form *ngIf="marca">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="marca.nombre" name="nombre" placeholder="Ingresa nombre de la marca" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="propietario" class="form-label">Propietario</label>
+            <input type="text" class="form-control" id="propietario" [(ngModel)]="marca.propietario" name="propietario" placeholder="Ingresa el propietario" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" [(ngModel)]="marca.tel" name="telefono" placeholder="Ingresa teléfono del propietario" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="rfc" class="form-label">RFC</label>
+            <input type="text" class="form-control" id="rfc" [(ngModel)]="marca.rfc" name="rfc" placeholder="Ingresa RFC del propietario" required [ngModelOptions]="{standalone: true}">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="actualizarMarca()">Actualizar</button>
+    </form>
+</div>
