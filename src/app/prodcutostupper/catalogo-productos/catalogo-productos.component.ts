@@ -12,7 +12,7 @@ import { catalogo } from 'src/app/modelo/catalogoprod.modelo';
   styleUrls: ['./catalogo-productos.component.css']
 })
 export class CatalogoProductosComponent {
-listacatalogo: catalogo []=[]
+listacatalogo: catalogo [] = [];
 
 constructor(private catalogoservice: ProductocatalogoService ){}
 

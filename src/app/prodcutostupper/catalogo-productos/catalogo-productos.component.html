@@ -39,7 +39,7 @@
             <tbody>
                 <!-- Aquí agregarás las filas con la información de tus componentes -->
                 <tr *ngFor="let producto of listacatalogo">
-                    <td><img src="{{ producto.foto }}" alt="Imagen del producto" class="imagen-pequena"></td>
+                    <td><img src="{{ producto.foto ? producto.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
 
                     <td> {{ producto.nombre }}</td>
                     <td>{{ producto.clasificacion.nomClasificacion }}</td>

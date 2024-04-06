@@ -22,7 +22,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let marca of listacatmarca">
-                <td><img src="{{ marca.foto }}" alt="Imagen del producto" class="imagen-pequena"></td>
+                <td><img src="{{ marca.foto ? marca.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
                 <td>{{ marca.nombre}}</td>
                 <td>{{marca.propietario}}</td>
                 <td>{{marca.tel}}</td>
