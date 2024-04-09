@@ -19,6 +19,7 @@ import { EliminarComponentProveedor } from './proveedores/eliminar/eliminar.comp
 import { ActualizarComponentProveedor } from './proveedores/actualizar/actualizar.component';
 import { EliminarMarcaComponent } from './Marca/eliminar/eliminar.component';
 import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
+import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
 
 const routes: Routes = [
   {
@@ -26,30 +27,30 @@ const routes: Routes = [
     component: CatalogoProductosComponent
   },
   {
-    path:  'NuevoProducto',
+    path: 'NuevoProducto',
     component: NuevoProductoComponent
   },
   {
-    path:'BuscarProducto',
-    component:BuscarProductosComponent
+    path: 'BuscarProducto',
+    component: BuscarProductosComponent
   },
   {
-    path:'productoseliminar/:id',
+    path: 'productoseliminar/:id',
     component: EliminarComponent
   }
-,
-{
-  path :'productosactualizar/:id',
-  component: ActualizarComponent
-},
+  ,
+  {
+    path: 'productosactualizar/:id',
+    component: ActualizarComponent
+  },
 
 
 
 
 
   {
-    path:'NuevaMarca',
-    component:NuevaMarcaComponent
+    path: 'NuevaMarca',
+    component: NuevaMarcaComponent
   },
   {
     path: 'BuscarMarca',
@@ -59,20 +60,14 @@ const routes: Routes = [
     path: 'CatalogoMarca',
     component: CatalogoMarcasComponent
   },
-{
-  path: 'marcaeliminar/:id',
-  component: EliminarMarcaComponent
-},
-{
-  path:'marcaactualizar/:id',
-  component: ActualizarMarcaComponent
-},
-
-
-
-
-
-
+  {
+    path: 'marcaeliminar/:id',
+    component: EliminarMarcaComponent
+  },
+  {
+    path: 'marcaactualizar/:id',
+    component: ActualizarMarcaComponent
+  },
   {
     path: 'BuscarProveedor',
     component: BuscarProveedorComponent
@@ -90,8 +85,13 @@ const routes: Routes = [
     component: EliminarComponentProveedor
   },
   {
-    path:'proveedoractualizar/:id',
+    path: 'proveedoractualizar/:id',
     component: ActualizarComponentProveedor
+  },
+  // CARRITO 
+  {
+    path: 'carrito',
+    component: ViewCarritoComponent
   }
 ];
 

@@ -32,7 +32,7 @@
                     <th>Material de Fabricación</th>
                     <th>País de Origen</th>
                     <th>estado</th>
-                    <th>OPCINES</th>
+                    <th class="sticky">OPCIONES</th>
                     
                 </tr>
             </thead>
@@ -59,13 +59,18 @@
                     <td>{{ producto.materialFabricacion }}</td>
                     <td>{{ producto.paisOrigen }}</td>
                     <td>{{ producto.estado }}</td>
-                    <td> 
-                        <a [routerLink]="['/productoseliminar', producto._id]">
-                            <i class="fas fa-trash-alt" style="color: red;"></i> <!-- Icono de bote de basura rojo -->
-                        </a>
-                        <a [routerLink]="['/productosactualizar', producto._id]">
-                            <i class="fas fa-pencil-alt" style="color: blue;"></i> <!-- Icono de lápiz azul -->
-                        </a>
+                    <td class="sticky">
+                        <div class="opciones">
+                            <a [routerLink]="['/productoseliminar', producto._id]">
+                                <i class="fas fa-trash-alt" style="color: red;"></i> <!-- Icono de bote de basura rojo -->
+                            </a>
+                            <a [routerLink]="['/productosactualizar', producto._id]">
+                                <i class="fas fa-pencil-alt" style="color: white;"></i> <!-- Icono de lápiz azul -->
+                            </a>
+                            <a [routerLink]="['/productosactualizar', producto._id]">
+                                <i class="fas fa-eye" style="color: white;"></i> <!-- Icono de lápiz azul -->
+                            </a>
+                        </div>
                     </td>
                     
 

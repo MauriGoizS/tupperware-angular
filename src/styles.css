@@ -1,23 +1,22 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+body {
+    color: black;
+    background-color: rgba(183, 224, 227, 1);
+}
+
 #principal {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100vh; /* Esto asegura que el contenedor ocupe al menos el 100% de la altura de la ventana del navegador */
-    background-image: url("pexels-zhang-kaiyv-1139556.jpg");
+    min-height: 100vh;
+    /* background-image: url(  "pexels-zhang-kaiyv-1139556.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     text-align: center;
     position: relative;
-
-
-}
-
-
-h1{
-    color: rgb(243, 248, 252);
+    color: black;
 }
 
 .imagen-pequena {

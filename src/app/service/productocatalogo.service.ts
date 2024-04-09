@@ -11,21 +11,22 @@ import { Router } from '@angular/router'; // Importa Router
 export class ProductocatalogoService {
 
   constructor(private http:HttpClient) { }
+
   obtenercatproducto(){
     return this.http.get<catalogo[]>('http://127.0.0.1:4000/productos/get_all')
   }
+
   eliminar_prod(id:string | null){
     const apiUrl='http://127.0.0.1:4000'
     const url = `${apiUrl}/productos/eliminar/${id}`;
     return this.http.delete<any>(url)
-    }
-    
+  }
 
-    obtenerPorId(id: string): Observable<catalogo> {
-      const apiUrl = 'http://127.0.0.1:4000';
-      const url = `${apiUrl}/productos/porID/${id}`;
-      return this.http.get<catalogo>(url);
-    }
+  obtenerPorId(id: string): Observable<catalogo> {
+    const apiUrl = 'http://127.0.0.1:4000';
+    const url = `${apiUrl}/productos/porID/${id}`;
+    return this.http.get<catalogo>(url);
+  }
 
   actualizarProducto(id: string, producto: Partial<catalogo>): Observable<any> {
     const apiUrl = 'http://127.0.0.1:4000';
@@ -40,15 +41,11 @@ export class ProductocatalogoService {
       );
   }
 
-
-  
-
   obtenerPorNombre(nombre:string): Observable<catalogo> {
     const apiUrl= 'http://127.0.0.1:4000';
     const url =  `${apiUrl}/productos/porNombre/${nombre}`;
     return this.http.get<catalogo>(url); // Asegúrate de que estás devolviendo un Observable<catalogob>
   }
+}
 
 
-
-  }

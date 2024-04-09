@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ViewCarritoComponent } from './view-carrito/view-carrito.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ViewCarritoComponent
+  ],
   imports: [
     CommonModule
   ]

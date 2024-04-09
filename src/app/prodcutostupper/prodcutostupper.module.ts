@@ -14,8 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CatalogoProductosComponent,
     NuevoProductoComponent,
     BuscarProductosComponent,
-    ActualizarComponent,
-    
+    ActualizarComponent
   ],
   imports: [
     CommonModule,
