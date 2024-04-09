@@ -22,6 +22,11 @@ import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.componen
 import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
 import { VerProductoComponent } from './prodcutostupper/ver-producto/ver-producto.component';
 
+import { NuevoUsuarioComponent } from './usuario/nuevo-usuario/nuevo-usuario.component';
+import { ActualizarUsuarioComponent } from './usuario/actualizar-usuario/actualizar-usuario.component';
+import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
+import { CatalogoUsuarioComponent } from './usuario/catalogo-usuario/catalogo-usuario.component';
+
 const routes: Routes = [
   // Rutas de Productos
   {
@@ -90,6 +95,23 @@ const routes: Routes = [
   {
     path: 'proveedoractualizar/:id',
     component: ActualizarComponentProveedor
+  },
+  // Rutas de Usuario
+  {
+    path: 'catalogo-usuario',
+    component: CatalogoUsuarioComponent
+  },
+  {
+    path: 'actualizar-usuario/:id',
+    component: ActualizarUsuarioComponent
+  },
+  {
+    path: 'eliminar-usuario/:id',
+    component: EliminarUsuarioComponent
+  },
+  {
+    path: 'nuevo-usuario',
+    component: NuevoUsuarioComponent
   },
   // CARRITO
   {

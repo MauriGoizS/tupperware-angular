@@ -6,7 +6,7 @@ import { NuevoProveedorComponent } from './nuevo-proveedor/nuevo-proveedor.compo
 import { FormsModule } from '@angular/forms';
 import { EliminarComponentProveedor } from './eliminar/eliminar.component';
 import { ActualizarComponentProveedor } from './actualizar/actualizar.component';
-import { Route, Router, RouterModule } from '@angular/router';  
+import { RouterModule } from '@angular/router';
 import { ProductostupperModule } from '../prodcutostupper/prodcutostupper.module';
 
 @NgModule({
@@ -21,8 +21,8 @@ import { ProductostupperModule } from '../prodcutostupper/prodcutostupper.module
     CommonModule,
     FormsModule,
     RouterModule
-    
-    
+
+
   ]
 })
 export class ProveedoresModule { }

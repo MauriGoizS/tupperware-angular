@@ -21,7 +21,6 @@ export class NuevoProductoComponent {
   constructor(
     private router: Router, // Inyecta Router
     private servicioMarc: CatmarcaService,
-    private servicioProd: ProductocatalogoService,
     private newProductService: NewProductService // Inyecta NewProductService
   ) {}
 

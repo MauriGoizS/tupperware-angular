@@ -1,0 +1,45 @@
+
+<h1>
+    CATALOGO DE USUARIOS
+</h1>
+
+<br>
+<br>
+
+
+<div class="container">
+    <div class="table-responsive">
+
+        <table class="table table-dark table-striped">
+            <thead >
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">gmail</th>
+                <th scope="col">rol</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let usuario of listacatusuario">
+
+                <td>{{ usuario.gmail }}</td>
+                <td>{{ usuario.rol }}</td>
+                <td><img src="{{ usuario.foto ? usuario.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
+                <td>
+                    <a [routerLink]="['/eliminarUsuario', usuario._id]">
+                        <i class="fas fa-trash-alt" style="color: red;"></i>
+                    </a>
+                    <a [routerLink]="['/actualizarUsuario', usuario._id]">
+                        <i class="fas fa-pencil-alt" style="color: blue;"></i>
+                    </a>
+                </td>
+
+
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
