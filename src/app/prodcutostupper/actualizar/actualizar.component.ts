@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catalogo } from 'src/app/modelo/catalogoprod.modelo';
+import { Catalogo } from 'src/app/modelo/catalogoprod.modelo';
 import { ProductocatalogoService } from 'src/app/service/productocatalogo.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductocatalogoService } from 'src/app/service/productocatalogo.servic
 })
 export class ActualizarComponent {
   prodId : string | null = null;
-  producto: catalogo | null = null;
+  producto: Catalogo | null = null;
   image: string = '';
 
 
@@ -19,7 +19,7 @@ export class ActualizarComponent {
     private catalogoservice : ProductocatalogoService,
     private router: Router,
   ){}
-  
+
   convertir_B64(event: any) {
     if (event.target.files && event.target.files[0] && this.producto) {
       const file = event.target.files[0];
@@ -38,11 +38,11 @@ export class ActualizarComponent {
   ngOnInit(): void {
     this.prodId = this.route.snapshot.paramMap.get('id');
     console.log('ID del producto a actualizar:', this.prodId);
-    
+
     if (this.prodId) {
       this.catalogoservice.obtenerPorId(this.prodId)
         .subscribe(
-          (producto: catalogo) => {
+          (producto: Catalogo) => {
             this.producto = producto;
             console.log('Producto obtenido:', this.producto);
           },
@@ -56,7 +56,7 @@ export class ActualizarComponent {
 actualizarProducto(): void {
   if (this.prodId && this.producto) {
     // Crear un objeto que contenga solo los campos modificados del producto
-    const productoActualizado: Partial<catalogo> = {
+    const productoActualizado: Partial<Catalogo> = {
       nombre: this.producto.nombre,
       costo: this.producto.costo,
       status: this.producto.status,

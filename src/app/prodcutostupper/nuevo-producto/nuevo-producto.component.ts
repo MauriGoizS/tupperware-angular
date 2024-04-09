@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Importa Router
 import { catmarca } from 'src/app/modelo/catmarca';
-import { catalogo, clasificacion, dimensiones } from 'src/app/modelo/catalogoprod.modelo';
+import { Catalogo, Clasificacion, Dimensiones } from 'src/app/modelo/catalogoprod.modelo';
 import { CatmarcaService } from 'src/app/service/catmarca.service';
 import { ProductocatalogoService } from 'src/app/service/productocatalogo.service';
 import { NewProductService } from 'src/app/service/new-product.service'; // Importa NewProductService
@@ -41,19 +41,19 @@ export class NuevoProductoComponent {
     });
   }
 
-  miclasificacion: clasificacion = {
+  miclasificacion: Clasificacion = {
     nomClasificacion: '',
     Descripcion: ''
   };
 
-  midimensiones: dimensiones = {
+  midimensiones: Dimensiones = {
     altura: 0,
     ancho: 0,
     largo: 0,
     capacidad: 0
   };
 
-  miproducto: catalogo = {
+  miproducto: Catalogo = {
     _id: '',
     nombre: '',
     clasificacion: this.miclasificacion,
@@ -82,7 +82,7 @@ export class NuevoProductoComponent {
 
   enviarProd() {
     this.miproducto.costo = Number(this.miproducto.costo);
-    this.miproducto.foto = this.image; 
+    this.miproducto.foto = this.image;
     console.log(this.miproducto);
 
 

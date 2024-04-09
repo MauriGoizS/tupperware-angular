@@ -20,8 +20,10 @@ import { ActualizarComponentProveedor } from './proveedores/actualizar/actualiza
 import { EliminarMarcaComponent } from './Marca/eliminar/eliminar.component';
 import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
 import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
+import { VerProductoComponent } from './prodcutostupper/ver-producto/ver-producto.component';
 
 const routes: Routes = [
+  // Rutas de Productos
   {
     path: 'productosCatalogo',
     component: CatalogoProductosComponent
@@ -43,11 +45,11 @@ const routes: Routes = [
     path: 'productosactualizar/:id',
     component: ActualizarComponent
   },
-
-
-
-
-
+  {
+    path: 'ver-producto/:id',
+    component: VerProductoComponent
+  },
+  // Rutas de Marcas
   {
     path: 'NuevaMarca',
     component: NuevaMarcaComponent
@@ -57,10 +59,6 @@ const routes: Routes = [
     component: BuscarMarcaComponent
   },
   {
-    path: 'CatalogoMarca',
-    component: CatalogoMarcasComponent
-  },
-  {
     path: 'marcaeliminar/:id',
     component: EliminarMarcaComponent
   },
@@ -68,6 +66,11 @@ const routes: Routes = [
     path: 'marcaactualizar/:id',
     component: ActualizarMarcaComponent
   },
+  {
+    path: 'CatalogoMarca',
+    component: CatalogoMarcasComponent
+  },
+  // Rutas de proveedores
   {
     path: 'BuscarProveedor',
     component: BuscarProveedorComponent
@@ -88,7 +91,7 @@ const routes: Routes = [
     path: 'proveedoractualizar/:id',
     component: ActualizarComponentProveedor
   },
-  // CARRITO 
+  // CARRITO
   {
     path: 'carrito',
     component: ViewCarritoComponent

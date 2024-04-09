@@ -3,7 +3,7 @@
     CATALOGO DE PRODUCTOS
 </h1>
 
-<br> 
+<br>
 <br>
 
 
@@ -15,7 +15,7 @@
                 <tr>
                     <th>Foto</th>
                     <th>Nombre</th>
-                    <th>Nombre Clasificacion </th>  
+                    <th>Nombre Clasificacion </th>
                     <th>Modelo</th>
                     <th>Costo</th>
                     <th>Precio</th>
@@ -33,7 +33,6 @@
                     <th>País de Origen</th>
                     <th>estado</th>
                     <th class="sticky">OPCIONES</th>
-                    
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +44,7 @@
                     <td>{{ producto.clasificacion.nomClasificacion }}</td>
                     <td>{{ producto.modelo }}</td>
                     <td>{{ producto.costo }}</td>
-                    <td>{{ producto.precio }}</td>
+                    <td>{{ producto.precio | currency }}</td>
                     <td>{{ producto.dimensiones.altura }}</td>
                     <td>{{ producto.dimensiones.ancho }}</td>
                     <td>{{ producto.dimensiones.largo }}</td>
@@ -67,12 +66,12 @@
                             <a [routerLink]="['/productosactualizar', producto._id]">
                                 <i class="fas fa-pencil-alt" style="color: white;"></i> <!-- Icono de lápiz azul -->
                             </a>
-                            <a [routerLink]="['/productosactualizar', producto._id]">
+                            <a [routerLink]="['/ver-producto', producto._id]">
                                 <i class="fas fa-eye" style="color: white;"></i> <!-- Icono de lápiz azul -->
                             </a>
                         </div>
                     </td>
-                    
+
 
                     <!-- Agrega más celdas según sea necesario -->
                 </tr>

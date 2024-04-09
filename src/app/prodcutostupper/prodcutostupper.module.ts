@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ActualizarComponent } from './actualizar/actualizar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VerProductoComponent } from './ver-producto/ver-producto.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CatalogoProductosComponent,
     NuevoProductoComponent,
     BuscarProductosComponent,
-    ActualizarComponent
+    ActualizarComponent,
+    VerProductoComponent
   ],
   imports: [
     CommonModule,

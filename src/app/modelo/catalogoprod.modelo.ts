@@ -1,13 +1,13 @@
 
 
-export interface clasificacion{
+export interface Clasificacion {
     nomClasificacion: string;
     Descripcion: string;
 }
 
 
 
-export interface dimensiones{
+export interface Dimensiones {
 
     altura: number;
     ancho: number;
@@ -16,14 +16,14 @@ export interface dimensiones{
 
 }
 
-export interface catalogo{
+export interface Catalogo {
     _id: string;
     nombre: string;
-    clasificacion: clasificacion;
+    clasificacion: Clasificacion;
     modelo: string;
     costo: number;
     precio: number;
-    dimensiones: dimensiones;
+    dimensiones: Dimensiones;
     numeroDePiezas: number;
     color: string[];
     foto: string;

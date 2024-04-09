@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { catalogo } from '../modelo/catalogoprod.modelo';
+import { Catalogo } from '../modelo/catalogoprod.modelo';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class NewProductService {
 
   // Función para insertar un nuevo producto en la base de datos MongoDB
   // Recibe como parámetro un objeto de tipo Producto y retorna un Observable
-  new_product(miProd:catalogo): Observable<any> {
+  new_product(miProd:Catalogo): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.post<any>(this.apiUrl, miProd, { headers }).pipe(
@@ -27,7 +27,7 @@ export class NewProductService {
       catchError(err => of(err.error.message))
     );
   }
-  
+
 }
 
 
