@@ -30,7 +30,7 @@ import { ClienteModule } from './cliente/cliente.module';
     BrowserModule,
     AppRoutingModule,
     NavegacionModule,
-    ProductostupperModule,
+    // ProductostupperModule,
     ProveedoresModule,
     UsuarioModule,
     EmpleadoModule,

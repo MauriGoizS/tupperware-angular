@@ -33,6 +33,11 @@ import { ActualizarEmpleadoComponent } from './empleado/actualizar-empleado/actu
 import { EliminarEmpleadoComponent } from './empleado/eliminar-empleado/eliminar-empleado.component';
 import { CatalogoEmpleadoComponent } from './empleado/catalogo-empleado/catalogo-empleado.component';
 
+import { NuevoClienteComponent } from './cliente/nuevo-cliente/nuevo-cliente.component';
+import { ActualizarClienteComponent } from './cliente/actualizar-cliente/actualizar-cliente.component';
+import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
+import { CatalogoClienteComponent } from './cliente/catalogo-cliente/catalogo-cliente.component';
+
 const routes: Routes = [
   // Rutas de Productos
   {
@@ -135,6 +140,23 @@ const routes: Routes = [
   {
     path: 'nuevo-empleado',
     component: NuevoEmpleadoComponent
+  },
+  // Rutas de Cliente
+  {
+    path: 'catalogo-cliente',
+    component: CatalogoClienteComponent
+  },
+  {
+    path: 'actualizar-cliente/:id',
+    component: ActualizarClienteComponent
+  },
+  {
+    path: 'eliminar-cliente/:id',
+    component: EliminarClienteComponent
+  },
+  {
+    path: 'nuevo-cliente',
+    component: NuevoClienteComponent
   },
   // CARRITO
   {
