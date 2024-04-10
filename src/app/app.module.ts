@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { EliminarComponent } from './prodcutostupper/eliminar/eliminar.component';
 import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
 import { UsuarioModule } from './usuario/usuario.module';
+import { EmpleadoModule } from './empleado/empleado.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { UsuarioModule } from './usuario/usuario.module';
     ProductostupperModule,
     ProveedoresModule,
     UsuarioModule,
+    EmpleadoModule,
     HttpClientModule,
     CommonModule,
     FormsModule,

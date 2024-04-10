@@ -1,37 +1,37 @@
+import { catempleado } from './../../modelo/catempleado';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { catusuario } from '../modelo/catusuario';
-import { CatalogoUsuarioComponent } from '../usuario/catalogo-usuario/catalogo-usuario.component';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CatUsuarioService {
+export class CatEmpleadoService {
 
   constructor(private http:HttpClient) { }
 
-  obtenercat_usuario(){
-    return this.http.get<catusuario[]>('http://127.0.0.1:4000/usuario/get_all')
+  obtenercat_empleado(){
+    return this.http.get<catempleado[]>('http://127.0.0.1:4000/empleado/get_all')
 
   }
 
-  eliminar_usuario(id:string | null){
+  eliminar_empleado(id:string | null){
     const apiUrl='http://127.0.0.1:4000'
-    const url = `${apiUrl}/usuario/eliminar/${id}`;
+    const url = `${apiUrl}/empleado/eliminar/${id}`;
     return this.http.delete<any>(url)
     }
 
-    obtenerPorId(id: string): Observable<catusuario> {
+    obtenerPorId(id: string): Observable<catempleado> {
       const apiUrl = 'http://127.0.0.1:4000';
-      const url = `${apiUrl}/usuario/porID/${id}`;
-      return this.http.get<catusuario>(url);
+      const url = `${apiUrl}/empleado/porID/${id}`;
+      return this.http.get<catempleado>(url);
     }
 
-  actualizarUsuario(id: string, producto: Partial<catusuario>): Observable<any> {
+  actualizarEmpleado(id: string, producto: Partial<catempleado>): Observable<any> {
     const apiUrl = 'http://127.0.0.1:4000';
-    const url = `${apiUrl}/usuario/actualizar/${id}`;
+    const url = `${apiUrl}/empleado/actualizar/${id}`;
     const headers = { 'Content-Type': 'application/json' };
 
     return this.http.put<any>(url, producto, { headers })

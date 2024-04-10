@@ -1,1 +1,51 @@
-<p>catalogo-empleado works!</p>
+
+<h1>
+  CATALOGO DE EMPLEADOS
+</h1>
+
+<br>
+<br>
+
+
+<div class="container">
+  <div class="table-responsive">
+
+      <table class="table table-dark table-striped">
+          <thead >
+          <tr>
+              <th scope="col">Gmail</th>
+              <th scope="col">Status</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Status</th>
+              <th scope="col">Imagen</th>
+              <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let empleado of listacatEmpleado">
+
+              <td>{{ empleado.gmail }}</td>
+              <td>{{ empleado.status }}</td>
+              <td>{{ empleado.edad }}</td>
+              <td>{{ empleado.direccion }}</td>
+              <td>{{ empleado.status }}</td>
+              <td><img src="{{ empleado.foto ? empleado.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
+              <td>
+                  <a [routerLink]="['/eliminar-empleado', empleado._id]">
+                      <i class="fas fa-trash-alt" style="color: red;"></i>
+                  </a>
+                  <a [routerLink]="['/actualizar-empleado', empleado._id]">
+                      <i class="fas fa-pencil-alt" style="color: blue;"></i>
+                  </a>
+              </td>
+
+
+          </tr>
+
+          </tbody>
+      </table>
+
+  </div>
+
+</div>
