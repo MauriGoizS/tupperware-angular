@@ -5,16 +5,14 @@ import { BuscarCarritoComponent } from './buscar-carrito/buscar-carrito.componen
 import { ViewCarritoComponent } from './view-carrito/view-carrito.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
-  declarations: [
-    BuscarCarritoComponent,
-    ViewCarritoComponent
-  ],
   imports: [
     CommonModule,
     HttpClientModule
+  ],
+  declarations: [
+    BuscarCarritoComponent,
+    ViewCarritoComponent
   ]
 })
 export class CarritoModule { }

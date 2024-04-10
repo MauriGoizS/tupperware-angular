@@ -15,6 +15,7 @@ import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.componen
 import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { CarritoModule } from './carrito/carrito.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ClienteModule } from './cliente/cliente.module';
     NavegacionModule,
     ProveedoresModule,
     UsuarioModule,
+    CarritoModule,
     EmpleadoModule,
     ClienteModule,
     HttpClientModule,
