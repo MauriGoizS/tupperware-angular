@@ -1,1 +1,18 @@
-<p>actualizar-empleado works!</p>
+<div class="container-transparente mt-5">
+  <h2>Actualizar Empleado</h2>
+  <form *ngIf="empleado">
+      <div class="mb-3">
+          <label for="nombre" class="form-label">Gmail</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="empleado.gmail" name="nombre" placeholder="Ingresa nombre del empleado" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Password</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="empleado.direccion" name="nombre" placeholder="Ingresa nombre del empleado" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-3">
+          <label for="telefono" class="form-label">Rol</label>
+          <input type="number" class="form-control" id="telefono" [(ngModel)]="empleado.edad" name="telefono" placeholder="Ingresa teléfono del empleado" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="actualizarEmpleado()">Actualizar</button>
+  </form>
+</div>
