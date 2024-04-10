@@ -30,7 +30,7 @@
               <td>{{ cliente.direccion }}</td>
               <td>{{ cliente.nomuser }}</td>
               <td>
-                  <a [routerLink]="['actualizar-cliente', cliente._id]">
+                  <a [routerLink]="['/eliminar-cliente', cliente._id]">
                       <i class="fas fa-trash-alt" style="color: red;"></i>
                   </a>
                   <a [routerLink]="['/actualizar-cliente', cliente._id]">
