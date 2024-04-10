@@ -31,6 +31,7 @@ export class BuscarCarritoComponent {
           console.log('error', error);
           this.buscando = false;
           this.error = true;
+          this.carrito = null;
         }
       });
     }
