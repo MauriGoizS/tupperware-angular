@@ -13,10 +13,12 @@ export class BuscarCarritoComponent {
 
   public buscando = false;
   public error = false;
+  public id: string = '';
   public carrito: CarritoModelo | null = null;
 
   buscarCarritoPorId(carritoId: string): void {
     if (carritoId) {
+      this.id = carritoId;
       this.buscando = true;
       this.error = false;
       this.carritoService.obtenerCarritoPorId(carritoId).subscribe({
@@ -32,5 +34,11 @@ export class BuscarCarritoComponent {
         }
       });
     }
+  }
+
+  get total(): number {
+    return this.carrito?.productos.reduce((total, producto) => {
+      return total + (producto.precio * producto.cantidad);
+    }, 0) || 0;
   }
 }

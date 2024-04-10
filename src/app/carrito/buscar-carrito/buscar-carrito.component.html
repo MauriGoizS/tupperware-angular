@@ -3,8 +3,40 @@
     <input type="text" #carritoId class="form-control" [disabled]="buscando" placeholder="Buscar carrito por id" aria-label="Buscar carrito por id" aria-describedby="button-addon">
     <button (click)="buscarCarritoPorId(carritoId.value)" class="btn btn-outline-secondary" type="button" [disabled]="buscando" id="button-addon2">Buscar</button>
   </div>
-  <!-- <span class="text-danger" *ngIf="error">Se ha generado un error inesperado desde el servicio</span> -->
+  <span class="text-danger" *ngIf="error">Se ha generado un error inesperado desde el servicio</span>
   <div class="my-5 p-5 h-3" *ngIf="buscando">
     Buscando...
+  </div>
+  <div *ngIf="carrito">
+    <p class="h2">Carrito</p>
+    <hr>
+    <p class="h4">ID: {{ id }}</p>
+    <small class="text-muted">Fecha pedido: <b>{{carrito.fecha_carrito | date:"short"}}</b></small>
+    <div class="mt-4">
+      <p class="h5">Productos</p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let producto of carrito.productos;">
+          <div class="d-flex">
+            <img [src]="producto.foto" [alt]="producto.nombre">
+            <div class="ms-4 d-flex flex-column align-items-start justify-content-end fw-bold flex-grow-1">
+              <p>Nombre:</p>
+              <p>Cantidad:</p>
+              <p>Precio U:</p>
+              <p>Precio M:</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-end">
+              <p>{{producto.nombre}}</p>
+              <p>{{producto.cantidad}}</p>
+              <p>{{producto.precio | currency}}</p>
+              <p>{{producto.precio * producto.cantidad | currency}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <hr>
+      <div class="d-flex justify-content-end me-3">
+        <p class="h5"><b class="me-1">Total: </b> {{ total | currency }}</p>
+      </div>
+    </div>
   </div>
 </div>
