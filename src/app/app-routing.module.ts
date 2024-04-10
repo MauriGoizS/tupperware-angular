@@ -27,6 +27,11 @@ import { ActualizarUsuarioComponent } from './usuario/actualizar-usuario/actuali
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
 import { CatalogoUsuarioComponent } from './usuario/catalogo-usuario/catalogo-usuario.component';
 
+import { NuevoEmpleadoComponent } from './empleado/nuevo-empleado/nuevo-empleado.component';
+import { ActualizarEmpleadoComponent } from './empleado/actualizar-empleado/actualizar-empleado.component';
+import { EliminarEmpleadoComponent } from './empleado/eliminar-empleado/eliminar-empleado.component';
+import { CatalogoEmpleadoComponent } from './empleado/catalogo-empleado/catalogo-empleado.component';
+
 const routes: Routes = [
   // Rutas de Productos
   {
@@ -112,6 +117,23 @@ const routes: Routes = [
   {
     path: 'nuevo-usuario',
     component: NuevoUsuarioComponent
+  },
+  // Rutas de Empleado
+  {
+    path: 'catalogo-empleado',
+    component: CatalogoEmpleadoComponent
+  },
+  {
+    path: 'actualizar-empleado/:id',
+    component: ActualizarEmpleadoComponent
+  },
+  {
+    path: 'eliminar-empleado/:id',
+    component: EliminarEmpleadoComponent
+  },
+  {
+    path: 'nuevo-empleado',
+    component: NuevoEmpleadoComponent
   },
   // CARRITO
   {
