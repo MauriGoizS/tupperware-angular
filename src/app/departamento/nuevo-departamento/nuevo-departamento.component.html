@@ -1,1 +1,20 @@
-<p>nuevo-departamento works!</p>
+<div class="container-transparente mt-5">
+  <h2>Formulario de Empleado</h2>
+  <form>
+      <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="miDepartamento.nombre" name="Gmail" placeholder="Ingresa nombre">
+            <label for="nombre" class="form-label">Estado</label>
+            <input type="text" class="form-control" id="estado" [(ngModel)]="miDepartamento.estado" name="password" placeholder="Ingresa estado">
+            <label for="nombre" class="form-label">Municipio</label>
+            <input type="text" class="form-control" id="municipio" [(ngModel)]="miDepartamento.municipio" name="Gmail" placeholder="Ingresa municipio">
+            <label for="nombre" class="form-label">Edad</label>
+            <input type="text" class="form-control" id="pais" [(ngModel)]="miDepartamento.pais" name="Gmail" placeholder="Ingresa pais">
+            <label for="nombre" class="form-label">Numero</label>
+            <input type="text" class="form-control" id="direccion" [(ngModel)]="miDepartamento.num" name="Gmail" placeholder="Ingresa numero">
+            <label for="direccion" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="direccion" [(ngModel)]="miDepartamento.direccion" name="Gmail" placeholder="Ingresa direccion">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="enviarDepartamento()">Enviar</button>
+  </form>
+</div>

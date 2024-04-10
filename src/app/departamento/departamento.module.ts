@@ -4,7 +4,8 @@ import { ActualizarDepartamentoComponent } from './actualizar-departamento/actua
 import { CatologoDepartamentoComponent } from './catologo-departamento/catologo-departamento.component';
 import { EliminarDepartamentoComponent } from './eliminar-departamento/eliminar-departamento.component';
 import { NuevoDepartamentoComponent } from './nuevo-departamento/nuevo-departamento.component';
-
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { NuevoDepartamentoComponent } from './nuevo-departamento/nuevo-departame
     NuevoDepartamentoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class DepartamentoModule { }

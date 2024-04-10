@@ -1,1 +1,52 @@
-<p>catologo-departamento works!</p>
+
+<h1>
+  CATALOGO DE DEPARTAMENTOS
+</h1>
+
+<br>
+<br>
+
+
+<div class="container">
+  <div class="table-responsive">
+
+      <table class="table table-dark table-striped">
+          <thead >
+          <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Municipio</th>
+              <th scope="col">Pais</th>
+              <th scope="col">Numero</th>
+              <th scope="col">Direccion</th>
+              <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let departamento of listacatDepartamento">
+
+              <td>{{ departamento.nombre }}</td>
+              <td>{{ departamento.estado }}</td>
+              <td>{{ departamento.municipio }}</td>
+              <td>{{ departamento.pais }}</td>
+              <td>{{ departamento.num }}</td>
+              <td>{{ departamento.direccion }}</td>
+
+              <td>
+                  <a [routerLink]="['/eliminar-departamento', departamento._id]">
+                      <i class="fas fa-trash-alt" style="color: red;"></i>
+                  </a>
+                  <a [routerLink]="['/actualizar-departamento', departamento._id]">
+                      <i class="fas fa-pencil-alt" style="color: blue;"></i>
+                  </a>
+              </td>
+
+
+          </tr>
+
+          </tbody>
+      </table>
+
+  </div>
+
+</div>

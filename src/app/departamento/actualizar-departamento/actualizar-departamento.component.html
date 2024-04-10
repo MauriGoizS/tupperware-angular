@@ -1,1 +1,18 @@
-<p>actualizar-departamento works!</p>
+<div class="container-transparente mt-5">
+  <h2>Actualizar Departamento</h2>
+  <form *ngIf="departamento">
+      <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="departamento.nombre" name="nombre" placeholder="Ingresa nombre del departamento" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">direccion</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="departamento.direccion" name="nombre" placeholder="Ingresa nombre del departamento" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-3">
+          <label for="telefono" class="form-label">Número</label>
+          <input type="number" class="form-control" id="telefono" [(ngModel)]="departamento.num" name="telefono" placeholder="Ingresa teléfono del departamento" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="actualizardepartamento()">Actualizar</button>
+  </form>
+</div>
