@@ -7,7 +7,6 @@ import { NavegacionModule }  from './navegacion/navegacion.module';
 import { ProveedoresModule } from './proveedores/proveedores.module';
 import { BuscarMarcaComponent } from './Marca/buscar-marca/buscar-marca.component';
 import { NuevaMarcaComponent } from './Marca/nueva-marca/nueva-marca.component';
-import { CatalogoMarcasComponent } from './Marca/catalogo-marcas/catalogo-marcas.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -23,7 +22,6 @@ import { CarritoModule } from './carrito/carrito.module';
     AppComponent,
     BuscarMarcaComponent,
     NuevaMarcaComponent,
-    CatalogoMarcasComponent,
     ActualizarMarcaComponent
   ],
   imports: [
