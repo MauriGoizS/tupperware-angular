@@ -13,9 +13,9 @@
         <table class="table table-dark table-striped">
             <thead >
             <tr>
+                <th scope="col">Gmail/th>
+                <th scope="col">Rol</th>
                 <th scope="col">Foto</th>
-                <th scope="col">gmail</th>
-                <th scope="col">rol</th>
                 <th></th>
             </tr>
             </thead>
@@ -26,10 +26,10 @@
                 <td>{{ usuario.rol }}</td>
                 <td><img src="{{ usuario.foto ? usuario.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
                 <td>
-                    <a [routerLink]="['/eliminarUsuario', usuario._id]">
+                    <a [routerLink]="['/eliminar-usuario', usuario._id]">
                         <i class="fas fa-trash-alt" style="color: red;"></i>
                     </a>
-                    <a [routerLink]="['/actualizarUsuario', usuario._id]">
+                    <a [routerLink]="['/actualizar-usuario', usuario._id]">
                         <i class="fas fa-pencil-alt" style="color: blue;"></i>
                     </a>
                 </td>

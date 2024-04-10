@@ -11,7 +11,7 @@ import { CatalogoUsuarioComponent } from '../usuario/catalogo-usuario/catalogo-u
 export class CatUsuarioService {
 
   constructor(private http:HttpClient) { }
-  
+
   obtenercat_usuario(){
     return this.http.get<catusuario[]>('http://127.0.0.1:4000/usuario/get_all')
 
@@ -23,12 +23,17 @@ export class CatUsuarioService {
     return this.http.delete<any>(url)
     }
 
-    
+    obtenerPorId(id: string): Observable<catusuario> {
+      const apiUrl = 'http://127.0.0.1:4000';
+      const url = `${apiUrl}/usuario/porID/${id}`;
+      return this.http.get<catusuario>(url);
+    }
+
   actualizarUsuario(id: string, producto: Partial<catusuario>): Observable<any> {
     const apiUrl = 'http://127.0.0.1:4000';
     const url = `${apiUrl}/usuario/actualizar/${id}`;
     const headers = { 'Content-Type': 'application/json' };
-  
+
     return this.http.put<any>(url, producto, { headers })
       .pipe(tap((res: any) => {
           console.log("Servicio de actualización:", res.message);
