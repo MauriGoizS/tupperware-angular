@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { DepartamentoModule } from './departamento/departamento.module';
 import { CarritoModule } from './carrito/carrito.module';
 import { MarcasModule } from './Marca/marcas.module';
 
@@ -29,6 +30,7 @@ import { MarcasModule } from './Marca/marcas.module';
     MarcasModule,
     EmpleadoModule,
     ClienteModule,
+    DepartamentoModule,
     HttpClientModule,
     CommonModule,
     FormsModule,

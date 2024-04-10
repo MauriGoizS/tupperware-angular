@@ -38,6 +38,11 @@ import { ActualizarClienteComponent } from './cliente/actualizar-cliente/actuali
 import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
 import { CatalogoClienteComponent } from './cliente/catalogo-cliente/catalogo-cliente.component';
 
+import { NuevoDepartamentoComponent } from './departamento/nuevo-departamento/nuevo-departamento.component';
+import { ActualizarDepartamentoComponent } from './departamento/actualizar-departamento/actualizar-departamento.component';
+import { EliminarDepartamentoComponent } from './departamento/eliminar-departamento/eliminar-departamento.component';
+import { CatologoDepartamentoComponent } from './departamento/catologo-departamento/catologo-departamento.component';
+
 const routes: Routes = [
   // Rutas de Productos
   {
@@ -157,6 +162,23 @@ const routes: Routes = [
   {
     path: 'nuevo-cliente',
     component: NuevoClienteComponent
+  },
+  // Rutas de Departamento
+  {
+    path: 'catalogo-departamento',
+    component: CatologoDepartamentoComponent
+  },
+  {
+    path: 'actualizar-departamento/:id',
+    component: ActualizarDepartamentoComponent
+  },
+  {
+    path: 'eliminar-departamento/:id',
+    component: EliminarDepartamentoComponent
+  },
+  {
+    path: 'nuevo-departamento',
+    component:NuevoDepartamentoComponent
   },
   // CARRITO
   {
