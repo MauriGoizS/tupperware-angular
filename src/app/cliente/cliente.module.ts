@@ -4,7 +4,8 @@ import { ActualizarClienteComponent } from './actualizar-cliente/actualizar-clie
 import { CatalogoClienteComponent } from './catalogo-cliente/catalogo-cliente.component';
 import { EliminarClienteComponent } from './eliminar-cliente/eliminar-cliente.component';
 import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
-
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
     NuevoClienteComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class ClienteModule { }
