@@ -5,24 +5,19 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavegacionModule }  from './navegacion/navegacion.module';
 import { ProveedoresModule } from './proveedores/proveedores.module';
-import { BuscarMarcaComponent } from './Marca/buscar-marca/buscar-marca.component';
-import { NuevaMarcaComponent } from './Marca/nueva-marca/nueva-marca.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { CarritoModule } from './carrito/carrito.module';
+import { MarcasModule } from './Marca/marcas.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuscarMarcaComponent,
-    NuevaMarcaComponent,
-    ActualizarMarcaComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +26,7 @@ import { CarritoModule } from './carrito/carrito.module';
     ProveedoresModule,
     UsuarioModule,
     CarritoModule,
+    MarcasModule,
     EmpleadoModule,
     ClienteModule,
     HttpClientModule,
