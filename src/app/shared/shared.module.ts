@@ -15,4 +15,4 @@ import { CardComponent } from './components/card/card.component';
     CardComponent
   ]
 })
-export class CommonsModule { }
+export class SharedModule { }

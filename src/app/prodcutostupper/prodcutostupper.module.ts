@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
 import { ActualizarComponent } from './actualizar/actualizar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerProductoComponent } from './ver-producto/ver-producto.component';
-import { CardComponent } from '../commons/components/card/card.component';
+import { CardComponent } from '../shared/components/card/card.component';
+import { EliminarComponent } from './eliminar/eliminar.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CardComponent } from '../commons/components/card/card.component';
     BuscarProductosComponent,
     ActualizarComponent,
     VerProductoComponent,
+    EliminarComponent,
     CardComponent
   ],
   imports: [

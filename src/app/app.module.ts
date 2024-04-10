@@ -12,7 +12,6 @@ import { CatalogoMarcasComponent } from './Marca/catalogo-marcas/catalogo-marcas
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { EliminarComponent } from './prodcutostupper/eliminar/eliminar.component';
 import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
@@ -24,7 +23,6 @@ import { EmpleadoModule } from './empleado/empleado.module';
     BuscarMarcaComponent,
     NuevaMarcaComponent,
     CatalogoMarcasComponent,
-    EliminarComponent,
     ActualizarMarcaComponent
   ],
   imports: [
