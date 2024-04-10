@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavegacionModule }  from './navegacion/navegacion.module';
-import { ProductostupperModule } from './prodcutostupper/prodcutostupper.module';
 import { ProveedoresModule } from './proveedores/proveedores.module';
 import { BuscarMarcaComponent } from './Marca/buscar-marca/buscar-marca.component';
 import { NuevaMarcaComponent } from './Marca/nueva-marca/nueva-marca.component';
@@ -30,7 +29,6 @@ import { ClienteModule } from './cliente/cliente.module';
     BrowserModule,
     AppRoutingModule,
     NavegacionModule,
-    // ProductostupperModule,
     ProveedoresModule,
     UsuarioModule,
     EmpleadoModule,
