@@ -1,1 +1,18 @@
-<p>actualizar-cliente works!</p>
+<div class="container-transparente mt-5">
+  <h2>Actualizar Cliente</h2>
+  <form *ngIf="cliente">
+      <div class="mb-3">
+          <label for="nombre" class="form-label">NomUser</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.nomuser" name="nombre" placeholder="Ingresa un nuevo user" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.direccion" name="nombre" placeholder="Ingresa la direccion" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-3">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input type="number" class="form-control" id="telefono" [(ngModel)]="cliente.tel" name="telefono" placeholder="Ingresa teléfono del cliente" required [ngModelOptions]="{standalone: true}">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="actualizarcliente()">Actualizar</button>
+  </form>
+</div>
