@@ -1,1 +1,49 @@
-<p>catalogo-cliente works!</p>
+
+<h1>
+  CATALOGO DE CLIENTES
+</h1>
+
+<br>
+<br>
+
+
+<div class="container">
+  <div class="table-responsive">
+
+      <table class="table table-dark table-striped">
+          <thead >
+          <tr>
+              <th scope="col">Correo</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Nombre de usuario</th>
+              <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let cliente of listacatCliente">
+
+              <td>{{ cliente.correo }}</td>
+              <td>{{ cliente.tel }}</td>
+              <td>{{ cliente.edad }}</td>
+              <td>{{ cliente.direccion }}</td>
+              <td>{{ cliente.nomuser }}</td>
+              <td>
+                  <a [routerLink]="['actualizar-cliente', cliente._id]">
+                      <i class="fas fa-trash-alt" style="color: red;"></i>
+                  </a>
+                  <a [routerLink]="['/actualizar-cliente', cliente._id]">
+                      <i class="fas fa-pencil-alt" style="color: blue;"></i>
+                  </a>
+              </td>
+
+
+          </tr>
+
+          </tbody>
+      </table>
+
+  </div>
+
+</div>
