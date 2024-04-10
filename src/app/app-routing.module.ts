@@ -26,6 +26,7 @@ import { NuevoUsuarioComponent } from './usuario/nuevo-usuario/nuevo-usuario.com
 import { ActualizarUsuarioComponent } from './usuario/actualizar-usuario/actualizar-usuario.component';
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
 import { CatalogoUsuarioComponent } from './usuario/catalogo-usuario/catalogo-usuario.component';
+import { BuscarCarritoComponent } from './carrito/buscar-carrito/buscar-carrito.component';
 
 const routes: Routes = [
   // Rutas de Productos
@@ -117,6 +118,10 @@ const routes: Routes = [
   {
     path: 'carrito',
     component: ViewCarritoComponent
+  },
+  {
+    path: 'buscar-carrito',
+    component: BuscarCarritoComponent
   }
 ];
 

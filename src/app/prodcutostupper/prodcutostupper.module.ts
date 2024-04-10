@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ActualizarComponent } from './actualizar/actualizar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerProductoComponent } from './ver-producto/ver-producto.component';
+import { CardComponent } from '../commons/components/card/card.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { VerProductoComponent } from './ver-producto/ver-producto.component';
     NuevoProductoComponent,
     BuscarProductosComponent,
     ActualizarComponent,
-    VerProductoComponent
+    VerProductoComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
