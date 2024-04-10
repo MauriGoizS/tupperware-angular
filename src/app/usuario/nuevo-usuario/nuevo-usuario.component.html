@@ -1,33 +1,20 @@
-<!-- <div class="container-transparente mt-5">
+<div class="container-transparente mt-5">
   <h2>Formulario de Usuario</h2>
   <form>
       <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" [(ngModel)]="misproveedores.nombre" name="nombre" placeholder="Ingresa nombre del proveedor">
+        <label for="foto">Foto:</label>
+        <input type="file" class="form-control-file" accept="image/*" (change)="convertir_B64($event)" id="foto">
       </div>
       <div class="mb-3">
-          <label for="estado" class="form-label">Estado</label>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" id="activo" value="Activo" [(ngModel)]="misproveedores.estado" name="estado">
-              <label class="form-check-label" for="activo">
-                  Activo
-              </label>
-          </div>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" id="inactivo" value="Inactivo" [(ngModel)]="misproveedores.estado" name="estado">
-              <label class="form-check-label" for="inactivo">
-                  Inactivo
-              </label>
-          </div>
+            <label for="nombre" class="form-label">Gmail</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.gmail" name="Gmail" placeholder="Ingresa gmail">
+            <label for="nombre" class="form-label">Password</label>
+            <input type="password" class="form-control" id="nombre" [(ngModel)]="misUsuarios.password" name="password" placeholder="Ingresa password">
       </div>
       <div class="mb-3">
-          <label for="telefono" class="form-label">Teléfono</label>
-          <input type="tel" class="form-control" id="telefono" [(ngModel)]="misproveedores.tel" name="telefono" placeholder="Ingresa teléfono del proveedor">
+        <label for="nombre" class="form-label">Rol</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.rol" name="password" placeholder="Ingresa rol">
       </div>
-      <div class="mb-3">
-          <label for="rfc" class="form-label">RFC</label>
-          <input type="text" class="form-control" id="rfc" [(ngModel)]="misproveedores.rfc" name="rfc" placeholder="Ingresa RFC del proveedor">
-      </div>
-      <button type="button" class="btn btn-primary" (click)="enviarProd()">Enviar</button>
+      <button type="button" class="btn btn-primary" (click)="enviarUsuario()">Enviar</button>
   </form>
-</div> -->
+</div>
