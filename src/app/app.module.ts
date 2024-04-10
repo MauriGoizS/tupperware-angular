@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { EmpleadoModule } from './empleado/empleado.module';
     ProveedoresModule,
     UsuarioModule,
     EmpleadoModule,
+    ClienteModule,
     HttpClientModule,
     CommonModule,
     FormsModule,
