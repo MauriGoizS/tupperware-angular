@@ -18,13 +18,13 @@ export class BuscarCarritoComponent {
 
   buscarCarritoPorId(carritoId: string): void {
     if (carritoId) {
+      this.carrito = null;
       this.id = carritoId;
       this.buscando = true;
       this.error = false;
       this.carritoService.obtenerCarritoPorId(carritoId).subscribe({
         next: res => {
           this.carrito = res;
-          console.log(this.carrito);
           this.buscando = false;
         },
         error: error => {
