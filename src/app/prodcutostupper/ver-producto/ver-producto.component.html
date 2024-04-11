@@ -39,5 +39,14 @@
       <p class="NOK">{{producto?.precio | currency}}</p>
     </div>
   </div>
-  <button class="tw-btn primary">Agregar al carrito</button>
+  <button
+    (click)="agregarAlCarrito()"
+    class="tw-btn primary"
+    *ngIf="producto?.cantidadExistente ? producto!.cantidadExistente > 0 : false">
+    Agregar al carrito
+  </button>
+
+  <div class="mt-5 alert alert-success" role="alert" *ngIf="mostrarAlerta">
+    Se agrego el producto al carrito
+  </div>
 </div>

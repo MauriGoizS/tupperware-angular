@@ -1,1 +1,54 @@
-carrito
+<div class="tw-card">
+  <div *ngIf="carrito">
+    <p class="h2">Carrito</p>
+    <hr>
+    <div class="mt-4">
+      <p class="h5">Productos</p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let producto of carrito.productos;">
+          <div class="d-flex">
+            <img [src]="producto.foto" width="200" [alt]="producto.nombre">
+            <div class="ms-4 d-flex flex-column align-items-start justify-content-end fw-bold flex-grow-1">
+              <p>Nombre:</p>
+              <p>Cantidad:</p>
+              <p>Precio U:</p>
+              <p>Precio M:</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-end">
+              <p>{{producto.nombre}}</p>
+              <p>{{producto.cantidad}}</p>
+              <p>{{producto.precio | currency}}</p>
+              <p>{{producto.precio * producto.cantidad | currency}}</p>
+            </div>
+            <div class="d-flex ms-4 justify-content-center align-items-center">
+              <button class="btn btn-danger" (click)="eliminarProducto(producto._id)">
+                <i class="fas fa-trash-alt" style="color: white;"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <hr>
+      <div class="d-flex justify-content-end me-3">
+        <p class="h5"><b class="me-1">Total: </b> {{ total | currency }}</p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mt-5">
+      <button [disabled]="realizandoPedido" class="btn btn-danger me-5" (click)="eliminarCarrito()">Eliminar Carrito</button>
+      <button [disabled]="realizandoPedido" class="btn btn-primary" (click)="realizarPedido()">Realizar pedido</button>
+    </div>
+  </div>
+  <div *ngIf="!carrito">
+    No tienes artículos en tu carrito
+  </div>
+  <div class="mt-5 alert alert-success" role="alert" *ngIf="pedidoRealizado">
+    Se realizo tu pedido con éxito. Guarda tu ID (<b>{{ idCompra }}</b>) para darle seguimiento
+    <button class="btn btn-success" (click)="copyToClipboard()">
+      <i class="fa-solid fa-copy" style="color: white;"></i>
+    </button>
+  </div>
+
+  <div class="mt-5 alert alert-primary" role="alert" *ngIf="guardadoAlPortapapeles">
+    Se guardó el ID en tu portapapeles
+  </div>
+</div>

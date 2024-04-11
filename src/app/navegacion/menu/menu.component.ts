@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { CarritoService } from '../../carrito/services/carrito.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-  numArticulos = 19;
+
+  private readonly carritoService = inject(CarritoService);
 
   constructor(
     private route: Router
@@ -16,5 +18,9 @@ export class MenuComponent {
   goToCarrito() {
     console.log('Logica para ir al carrito');
     this.route.navigateByUrl('carrito');
+  }
+
+  get numArticulos(): number {
+    return this.carritoService.carrito?.productos.length || 0;
   }
 }

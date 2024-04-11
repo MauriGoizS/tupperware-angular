@@ -5,5 +5,4 @@ export interface catalogoproductos{
     foto: string;
     cantidadExistente: number;
     costo: number;
-
 }

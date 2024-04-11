@@ -98,7 +98,6 @@
             Carrito
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="carrito" routerLinkActive="active">Ver carrito</a></li>
             <li><a class="dropdown-item" routerLink="buscar-carrito" routerLinkActive="active">Buscar carrito</a></li>
           </ul>
         </li>
@@ -107,7 +106,7 @@
 
       </ul>
       <div class="button-badge" (click)="goToCarrito()">
-        <span class="cart-badge">{{ numArticulos }}</span>
+        <span class="cart-badge" *ngIf="numArticulos > 0">{{ numArticulos }}</span>
         <i class="fa-solid fa-cart-shopping"></i>
       </div>
       <form class="d-flex" role="search">

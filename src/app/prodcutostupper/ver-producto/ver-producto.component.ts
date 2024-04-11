@@ -2,6 +2,8 @@ import { ProductocatalogoService } from 'src/app/service/productocatalogo.servic
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Catalogo } from 'src/app/modelo/catalogoprod.modelo';
+import { CarritoService } from '../../carrito/services/carrito.service';
+import { Producto } from '../../modelo/carrito.modelo';
 
 @Component({
   selector: 'app-ver-producto',
@@ -12,10 +14,12 @@ export class VerProductoComponent implements OnInit {
 
   private readonly productoCatalogoService = inject(ProductocatalogoService);
   private readonly router = inject(ActivatedRoute);
+  private readonly carritoService = inject(CarritoService);
 
   public producto: Catalogo | null = null;
   public idProducto: string = '';
   public cantidad = 1;
+  public mostrarAlerta = false;
 
   constructor() { }
 
@@ -38,5 +42,23 @@ export class VerProductoComponent implements OnInit {
     if ( this.producto?.cantidadExistente && this.producto?.cantidadExistente > 0 && (this.cantidad + cantidad) > 0 && this.cantidad <= this.producto?.cantidadExistente  ) {
       this.cantidad = this.cantidad + cantidad;
     }
+  }
+
+  agregarAlCarrito() {
+    const nuevoProducto: Producto = {
+      _id: this.idProducto,
+      cantidad: this.cantidad,
+      color: 'Rojo',
+      foto: this.producto?.foto || '',
+      nombre: this.producto?.nombre || '',
+      precio: this.producto?.precio || 0
+    }
+
+    this.carritoService.agregarProductoAlCarrito(nuevoProducto);
+    this.mostrarAlerta = true;
+
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 3000);
   }
 }
