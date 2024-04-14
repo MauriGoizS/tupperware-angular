@@ -19,12 +19,7 @@ export class NuevoUsuarioComponent {
     password: ''
   };
 
-  constructor (
-    private router: Router,
-    private newUsuarioService: NewUsuarioService
-  ) {}
-
-  convertir_B64(event: any) {
+    convertir_B64(event: any) {
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
       const reader = new FileReader();
@@ -35,7 +30,14 @@ export class NuevoUsuarioComponent {
     }
   }
 
+
+  constructor (
+    private router: Router,
+    private newUsuarioService: NewUsuarioService
+  ) {}
+
   enviarUsuario() {
+    this.misUsuarios.foto = this.image;
     this.newUsuarioService.new_usuario(this.misUsuarios).subscribe(data => {
       console.log("Usuario", data);
       if (data) {
