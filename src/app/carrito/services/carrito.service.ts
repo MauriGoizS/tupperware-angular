@@ -72,4 +72,9 @@ export class CarritoService {
   realizarPedido() {
     return this.http.post<CarritoModelo>(`${this.apiUrl}/carrito/nuevo`, this._carrito);
   }
+
+  obtenerCatalogoCarrito(){
+    return this.http.get<CarritoModelo[]>(`${this.apiUrl}/carrito/get_all`)
+
+  }
 }

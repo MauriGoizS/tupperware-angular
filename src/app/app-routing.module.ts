@@ -4,29 +4,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { NuevoProductoComponent } from './prodcutostupper/nuevo-producto/nuevo-producto.component';
 import { BuscarProductosComponent } from './prodcutostupper/buscar-productos/buscar-productos.component';
 import { CatalogoProductosComponent } from './prodcutostupper/catalogo-productos/catalogo-productos.component';
-
+import { EliminarComponent } from './prodcutostupper/eliminar/eliminar.component';
+import { ActualizarComponent } from './prodcutostupper/actualizar/actualizar.component';
+import { VerProductoComponent } from './prodcutostupper/ver-producto/ver-producto.component';
 
 import { NuevaMarcaComponent } from './Marca/nueva-marca/nueva-marca.component';
 import { BuscarMarcaComponent } from './Marca/buscar-marca/buscar-marca.component';
 import { CatalogoMarcasComponent } from './Marca/catalogo-marcas/catalogo-marcas.component';
+import { EliminarMarcaComponent } from './Marca/eliminar/eliminar.component';
+import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
 
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { BuscarProveedorComponent } from './proveedores/buscar-proveedor/buscar-proveedor.component';
 import { CatalogoProveedoresComponent } from './proveedores/catalogo-proveedores/catalogo-proveedores.component';
-import { EliminarComponent } from './prodcutostupper/eliminar/eliminar.component';
-import { ActualizarComponent } from './prodcutostupper/actualizar/actualizar.component';
 import { EliminarComponentProveedor } from './proveedores/eliminar/eliminar.component';
 import { ActualizarComponentProveedor } from './proveedores/actualizar/actualizar.component';
-import { EliminarMarcaComponent } from './Marca/eliminar/eliminar.component';
-import { ActualizarMarcaComponent } from './Marca/actualizar/actualizar.component';
-import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
-import { VerProductoComponent } from './prodcutostupper/ver-producto/ver-producto.component';
 
 import { NuevoUsuarioComponent } from './usuario/nuevo-usuario/nuevo-usuario.component';
 import { ActualizarUsuarioComponent } from './usuario/actualizar-usuario/actualizar-usuario.component';
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
 import { CatalogoUsuarioComponent } from './usuario/catalogo-usuario/catalogo-usuario.component';
-import { BuscarCarritoComponent } from './carrito/buscar-carrito/buscar-carrito.component';
 
 import { NuevoEmpleadoComponent } from './empleado/nuevo-empleado/nuevo-empleado.component';
 import { ActualizarEmpleadoComponent } from './empleado/actualizar-empleado/actualizar-empleado.component';
@@ -42,6 +39,10 @@ import { NuevoDepartamentoComponent } from './departamento/nuevo-departamento/nu
 import { ActualizarDepartamentoComponent } from './departamento/actualizar-departamento/actualizar-departamento.component';
 import { EliminarDepartamentoComponent } from './departamento/eliminar-departamento/eliminar-departamento.component';
 import { CatologoDepartamentoComponent } from './departamento/catologo-departamento/catologo-departamento.component';
+
+import { BuscarCarritoComponent } from './carrito/buscar-carrito/buscar-carrito.component';
+import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
+import { CatalogoCarritoComponent } from './carrito/catalogo-carrito/catalogo-carrito.component';
 
 const routes: Routes = [
   // Rutas de Productos
@@ -188,6 +189,10 @@ const routes: Routes = [
   {
     path: 'buscar-carrito',
     component: BuscarCarritoComponent
+  },
+  {
+    path: 'catalogo-carrito',
+    component: CatalogoCarritoComponent
   }
 ];
 

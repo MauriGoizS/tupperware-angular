@@ -41,14 +41,14 @@
                     <td><img src="{{ producto.foto ? producto.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
 
                     <td> {{ producto.nombre }}</td>
-                    <td>{{ producto.clasificacion.nomClasificacion }}</td>
+                    <td>{{ producto?.clasificacion?.nomClasificacion }}</td>
                     <td>{{ producto.modelo }}</td>
                     <td>{{ producto.costo }}</td>
                     <td>{{ producto.precio | currency }}</td>
-                    <td>{{ producto.dimensiones.altura }}</td>
-                    <td>{{ producto.dimensiones.ancho }}</td>
-                    <td>{{ producto.dimensiones.largo }}</td>
-                    <td>{{ producto.dimensiones.capacidad }}</td>
+                    <td>{{ producto?.dimensiones?.altura }}</td>
+                    <td>{{ producto?.dimensiones?.ancho }}</td>
+                    <td>{{ producto?.dimensiones?.largo }}</td>
+                    <td>{{ producto?.dimensiones?.capacidad }}</td>
                     <td>{{ producto.numeroDePiezas }}</td>
                     <td>{{ producto.color }}</td>
                     <td>{{ producto.fechaAdquisicion }}</td>
