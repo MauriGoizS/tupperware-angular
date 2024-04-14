@@ -5,18 +5,20 @@ import { CarritoService } from '../services/carrito.service';
 @Component({
   selector: 'app-catalogo-carrito',
   templateUrl: './catalogo-carrito.component.html',
-  styleUrls: ['./catalogo-carrito.component.css']
+  styleUrls: ['./catalogo-carrito.component.css'],
 })
 export class CatalogoCarritoComponent {
-listaCatalogoCarrito: CarritoModelo[]=[]
-  constructor(private catalagoCarrito: CarritoService){}
+  listaCatalogoCarrito: CarritoModelo[] = [];
 
-  ngOnInit(): void{
-    this.catalagoCarrito.obtenerCatalogoCarrito()
+  constructor(private catalagoCarrito: CarritoService) {}
 
-    .subscribe(data =>{
-      console.log(data);
-      this.listaCatalogoCarrito=data;
-    });
+  ngOnInit(): void {
+    this.catalagoCarrito
+      .obtenerCatalogoCarrito()
+
+      .subscribe((data) => {
+        console.log(data);
+        this.listaCatalogoCarrito = data;
+      });
   }
 }

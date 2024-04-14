@@ -191,8 +191,17 @@ const routes: Routes = [
     component: BuscarCarritoComponent
   },
   {
+    path: 'buscar-carrito/:idCarrito',
+    component: BuscarCarritoComponent
+  },
+  {
     path: 'catalogo-carrito',
     component: CatalogoCarritoComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/productosCatalogo',
+    pathMatch: 'full'
   }
 ];
 

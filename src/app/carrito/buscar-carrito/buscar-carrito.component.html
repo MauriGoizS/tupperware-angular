@@ -1,7 +1,7 @@
 <div class="tw-card">
   <div class="input-group mb-3">
-    <input type="text" #carritoId class="form-control" [disabled]="buscando" placeholder="Buscar carrito por id" aria-label="Buscar carrito por id" aria-describedby="button-addon">
-    <button (click)="buscarCarritoPorId(carritoId.value)" class="btn btn-outline-secondary" type="button" [disabled]="buscando" id="button-addon2">Buscar</button>
+    <input type="text" #inputCarritoId class="form-control" [disabled]="buscando" placeholder="Buscar carrito por id" aria-label="Buscar carrito por id" aria-describedby="button-addon">
+    <button (click)="buscarCarritoPorId(inputCarritoId.value)" class="btn btn-outline-secondary" type="button" [disabled]="buscando" id="button-addon2">Buscar</button>
   </div>
   <span class="text-danger" *ngIf="error">Se ha generado un error inesperado desde el servicio</span>
   <div class="my-5 p-5 h-3" *ngIf="buscando">
