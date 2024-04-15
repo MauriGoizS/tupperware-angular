@@ -13,7 +13,11 @@
       </div>
       <div class="mb-3">
         <label for="nombre" class="form-label">Rol</label>
-        <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.rol" name="password" placeholder="Ingresa rol">
+        <!-- <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.rol" name="password" placeholder="Ingresa rol"> -->
+        <select id="Clasificación" class="form-control" [(ngModel)]="misUsuarios.rol" [ngModelOptions]="{standalone: true}">
+          <option value="Cliente">Cliente</option>
+          <option value="Empleado">Empleado</option>
+      </select>
       </div>
       <button type="button" class="btn btn-primary" (click)="enviarUsuario()">Enviar</button>
   </form>

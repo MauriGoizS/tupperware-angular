@@ -43,6 +43,8 @@ import { CatologoDepartamentoComponent } from './departamento/catologo-departame
 import { BuscarCarritoComponent } from './carrito/buscar-carrito/buscar-carrito.component';
 import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
 import { CatalogoCarritoComponent } from './carrito/catalogo-carrito/catalogo-carrito.component';
+import { EliminarCarritoComponent } from './carrito/eliminar-carrito/eliminar-carrito.component';
+
 
 const routes: Routes = [
   // Rutas de Productos
@@ -197,6 +199,10 @@ const routes: Routes = [
   {
     path: 'catalogo-carrito',
     component: CatalogoCarritoComponent
+  },
+  {
+    path: 'eliminar-carrito',
+    component: EliminarCarritoComponent
   },
   {
     path: '**',

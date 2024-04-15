@@ -2,8 +2,6 @@
   <h2>Formulario de Empleado</h2>
   <form>
       <div class="mb-3">
-        <label for="foto">Foto:</label>
-        <input type="file" class="form-control-file" accept="image/*" (change)="convertir_B64($event)" id="foto">
       </div>
       <div class="mb-3">
             <label for="nombre" class="form-label">Gmail</label>
@@ -11,7 +9,10 @@
             <label for="nombre" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" [(ngModel)]="miEmpleado.password" name="password" placeholder="Ingresa password">
             <label for="nombre" class="form-label">Status</label>
-            <input type="text" class="form-control" id="status" [(ngModel)]="miEmpleado.status" name="Gmail" placeholder="Ingresa Status">
+            <select id="Clasificación" class="form-control" [(ngModel)]="miEmpleado.status" [ngModelOptions]="{standalone: true}">
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
             <label for="nombre" class="form-label">Edad</label>
             <input type="number" class="form-control" id="edad" [(ngModel)]="miEmpleado.edad" name="Gmail" placeholder="Ingresa Edad">
             <label for="nombre" class="form-label">Direccion</label>

@@ -75,6 +75,9 @@ export class CarritoService {
 
   obtenerCatalogoCarrito(){
     return this.http.get<CarritoModelo[]>(`${this.apiUrl}/carrito/get_all`)
-
   }
+
+  eliminar_carrito(id:string | null){
+    return this.http.delete<any>(`${this.apiUrl}/carrito/eliminar/${id}`)
+    }
 }

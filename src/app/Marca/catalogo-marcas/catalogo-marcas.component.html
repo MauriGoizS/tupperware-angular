@@ -3,7 +3,7 @@
     CATALOGO DE MARCAS
 </h1>
 
-<br> 
+<br>
 <br>
 
 
@@ -13,10 +13,10 @@
             <thead>
             <tr>
                 <th scope="col">Foto</th>
-                <th scope="col">NOMBRE</th>
+                <th scope="col">NOMBRE DE LA MARCA</th>
                 <th scope="col">PROPIETARIO</th>
                 <th scope="col">TELEFONO</th>
-                <th scope="col">RFC</th>
+                <th scope="col">CODIGO</th>
                 <th scope="col">OPCIONES</th>
             </tr>
             </thead>
@@ -27,7 +27,7 @@
                 <td>{{marca.propietario}}</td>
                 <td>{{marca.tel}}</td>
                 <td>{{ marca.rfc}}</td>
-                <td> 
+                <td>
                     <a [routerLink]="['/marcaeliminar', marca._id]">
                         <i class="fas fa-trash-alt" style="color: red;"></i> <!-- Icono de bote de basura rojo -->
                     </a>

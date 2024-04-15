@@ -24,7 +24,7 @@
 
                 <td>{{ usuario.gmail }}</td>
                 <td>{{ usuario.rol }}</td>
-                <td><img src="{{ usuario.foto ? usuario.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
+                <td><img src="{{ usuario.foto ? usuario.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena" style="width: 115px; height: 85px;"></td>
                 <td>
                     <a [routerLink]="['/eliminar-usuario', usuario._id]">
                         <i class="fas fa-trash-alt" style="color: red;"></i>

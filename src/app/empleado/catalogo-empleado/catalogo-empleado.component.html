@@ -17,9 +17,8 @@
               <th scope="col">Status</th>
               <th scope="col">Edad</th>
               <th scope="col">Direccion</th>
-              <th scope="col">Status</th>
-              <th scope="col">Imagen</th>
-              <th></th>
+              <th scope="col">Opciones</th>
+              <!-- <th scope="col">Imagen</th> -->
           </tr>
           </thead>
           <tbody>
@@ -29,8 +28,7 @@
               <td>{{ empleado.status }}</td>
               <td>{{ empleado.edad }}</td>
               <td>{{ empleado.direccion }}</td>
-              <td>{{ empleado.status }}</td>
-              <td><img src="{{ empleado.foto ? empleado.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td>
+              <!-- <td><img src="{{ empleado.foto ? empleado.foto : 'assets/img/sin-imagen.jpg' }}" alt="Imagen del producto" class="imagen-pequena"></td> -->
               <td>
                   <a [routerLink]="['/eliminar-empleado', empleado._id]">
                       <i class="fas fa-trash-alt" style="color: red;"></i>

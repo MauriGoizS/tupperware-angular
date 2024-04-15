@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CatalogoCarritoComponent } from './catalogo-carrito/catalogo-carrito.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { EliminarCarritoComponent } from './eliminar-carrito/eliminar-carrito.component';
+
+
 
 @NgModule({
   imports: [
@@ -18,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     BuscarCarritoComponent,
     ViewCarritoComponent,
-    CatalogoCarritoComponent
+    CatalogoCarritoComponent,
+    EliminarCarritoComponent,
   ]
 })
 export class CarritoModule { }
