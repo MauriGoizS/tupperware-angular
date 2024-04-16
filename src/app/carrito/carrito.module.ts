@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CatalogoCarritoComponent } from './catalogo-carrito/catalogo-carrito.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { EliminarCarritoComponent } from './eliminar-carrito/eliminar-carrito.component';
 
 
 
@@ -21,8 +20,7 @@ import { EliminarCarritoComponent } from './eliminar-carrito/eliminar-carrito.co
   declarations: [
     BuscarCarritoComponent,
     ViewCarritoComponent,
-    CatalogoCarritoComponent,
-    EliminarCarritoComponent,
+    CatalogoCarritoComponent
   ]
 })
 export class CarritoModule { }

@@ -7,6 +7,7 @@ import { CatalogoProductosComponent } from './prodcutostupper/catalogo-productos
 import { EliminarComponent } from './prodcutostupper/eliminar/eliminar.component';
 import { ActualizarComponent } from './prodcutostupper/actualizar/actualizar.component';
 import { VerProductoComponent } from './prodcutostupper/ver-producto/ver-producto.component';
+import { ProductosProveedorComponent } from './prodcutostupper/productos-proveedor/productos-proveedor.component';
 
 import { NuevaMarcaComponent } from './Marca/nueva-marca/nueva-marca.component';
 import { BuscarMarcaComponent } from './Marca/buscar-marca/buscar-marca.component';
@@ -43,7 +44,6 @@ import { CatologoDepartamentoComponent } from './departamento/catologo-departame
 import { BuscarCarritoComponent } from './carrito/buscar-carrito/buscar-carrito.component';
 import { ViewCarritoComponent } from './carrito/view-carrito/view-carrito.component';
 import { CatalogoCarritoComponent } from './carrito/catalogo-carrito/catalogo-carrito.component';
-import { EliminarCarritoComponent } from './carrito/eliminar-carrito/eliminar-carrito.component';
 
 
 const routes: Routes = [
@@ -72,6 +72,10 @@ const routes: Routes = [
   {
     path: 'ver-producto/:id',
     component: VerProductoComponent
+  },
+  {
+    path: 'productos-proveedor',
+    component: ProductosProveedorComponent
   },
   // Rutas de Marcas
   {
@@ -199,10 +203,6 @@ const routes: Routes = [
   {
     path: 'catalogo-carrito',
     component: CatalogoCarritoComponent
-  },
-  {
-    path: 'eliminar-carrito',
-    component: EliminarCarritoComponent
   },
   {
     path: '**',

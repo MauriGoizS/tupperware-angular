@@ -9,6 +9,7 @@ import { ActualizarComponent } from './actualizar/actualizar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerProductoComponent } from './ver-producto/ver-producto.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
+import { ProductosProveedorComponent } from './productos-proveedor/productos-proveedor.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EliminarComponent } from './eliminar/eliminar.component';
     BuscarProductosComponent,
     ActualizarComponent,
     VerProductoComponent,
-    EliminarComponent
+    EliminarComponent,
+    ProductosProveedorComponent
   ],
   imports: [
     CommonModule,
