@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Catalogo } from 'src/app/modelo/catalogoprod.modelo';
+import { Producto } from 'src/app/modelo/catalogoprod.modelo';
 import { ProductocatalogoService } from 'src/app/service/productocatalogo.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductocatalogoService } from 'src/app/service/productocatalogo.servic
 })
 export class ActualizarComponent {
   prodId : string | null = null;
-  producto: Catalogo | null = null;
+  producto: Producto | null = null;
   image: string = '';
 
 
@@ -42,7 +42,7 @@ export class ActualizarComponent {
     if (this.prodId) {
       this.catalogoservice.obtenerPorId(this.prodId)
         .subscribe(
-          (producto: Catalogo) => {
+          (producto: Producto) => {
             this.producto = producto;
             console.log('Producto obtenido:', this.producto);
           },
@@ -56,7 +56,7 @@ export class ActualizarComponent {
 actualizarProducto(): void {
   if (this.prodId && this.producto) {
     // Crear un objeto que contenga solo los campos modificados del producto
-    const productoActualizado: Partial<Catalogo> = {
+    const productoActualizado: Partial<Producto> = {
       nombre: this.producto.nombre,
       costo: this.producto.costo,
       status: this.producto.status,

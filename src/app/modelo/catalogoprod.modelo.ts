@@ -1,3 +1,4 @@
+import { Proveedor } from './catproveedor';
 
 
 export interface Clasificacion {
@@ -16,7 +17,7 @@ export interface Dimensiones {
 
 }
 
-export interface Catalogo {
+export interface Producto {
     _id: string;
     nombre: string;
     clasificacion: Clasificacion;
@@ -33,7 +34,7 @@ export interface Catalogo {
     ciudadanosRecomendados: number;
     materialFabricacion: string;
     paisOrigen:number;
-    proveedorId:number;
     marcaId: string;
     estado: string;
+    proveedor: Proveedor | null;
 }

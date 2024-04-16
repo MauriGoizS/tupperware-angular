@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { CatalogoProveedoresComponent } from '../proveedores/catalogo-proveedores/catalogo-proveedores.component';
-import { catproveedor } from '../modelo/catproveedor';
+import { Proveedor } from '../modelo/catproveedor';
 
 
 @Injectable({
@@ -15,9 +15,9 @@ import { catproveedor } from '../modelo/catproveedor';
 export class CatprovedorService {
 
   constructor(private http:HttpClient) { }
-  
+
   obtenercat_proveedor(){
-    return this.http.get<catproveedor[]>('http://127.0.0.1:4000/proveedor/get_all')
+    return this.http.get<Proveedor[]>('http://127.0.0.1:4000/proveedor/get_all')
 
   }
 
@@ -27,18 +27,18 @@ export class CatprovedorService {
     return this.http.delete<any>(url)
     }
 
-  obtenerPorId(id: string): Observable<catproveedor> {
+  obtenerPorId(id: string): Observable<Proveedor> {
     const apiUrl = 'http://127.0.0.1:4000';
     const url = `${apiUrl}/proveedor/porID/${id}`;
-    return this.http.get<catproveedor>(url);
+    return this.http.get<Proveedor>(url);
   }
 
-  
-  actualizarProducto(id: string, producto: Partial<catproveedor>): Observable<any> {
+
+  actualizarProducto(id: string, producto: Partial<Proveedor>): Observable<any> {
     const apiUrl = 'http://127.0.0.1:4000';
     const url = `${apiUrl}/proveedor/actualizar/${id}`;
     const headers = { 'Content-Type': 'application/json' };
-  
+
     return this.http.put<any>(url, producto, { headers })
       .pipe(tap((res: any) => {
           console.log("Servicio de actualización:", res.message);
@@ -46,10 +46,10 @@ export class CatprovedorService {
         catchError(err => of(err.error.message))
       );
   }
-  obtenerPorNombre(nombre:string): Observable<catproveedor> {
+  obtenerPorNombre(nombre:string): Observable<Proveedor> {
     const apiUrl= 'http://127.0.0.1:4000';
     const url =  `${apiUrl}/proveedor/porNombre/${nombre}`;
-    return this.http.get<catproveedor>(url); // Asegúrate de que estás devolviendo un Observable<catalogob>
+    return this.http.get<Proveedor>(url); // Asegúrate de que estás devolviendo un Observable<catalogob>
   }
 
 }

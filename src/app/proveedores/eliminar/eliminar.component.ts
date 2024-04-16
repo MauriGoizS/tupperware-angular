@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Route, Router } from '@angular/router';
-import { catproveedor } from 'src/app/modelo/catproveedor';
+import { Proveedor } from 'src/app/modelo/catproveedor';
 import { catalogoproductos } from 'src/app/modelo/productocatalogo';
 import { CatprovedorService } from 'src/app/service/catprovedor.service';
 
@@ -15,13 +15,13 @@ export class EliminarComponentProveedor {
     private router: ActivatedRoute,
     private servidorprove: CatprovedorService
     ){}
-    
+
 ngOnInit(): void {
   this.prodId = this.router.snapshot.paramMap.get('id');
   console.log(this.prodId);
   this.eliminar()
   }
-  
+
 res:any
 messageErr:any
 eliminar(){

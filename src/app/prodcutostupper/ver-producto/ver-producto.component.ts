@@ -1,9 +1,9 @@
 import { ProductocatalogoService } from 'src/app/service/productocatalogo.service';
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Catalogo } from 'src/app/modelo/catalogoprod.modelo';
+import { Producto } from 'src/app/modelo/catalogoprod.modelo';
 import { CarritoService } from '../../carrito/services/carrito.service';
-import { Producto } from '../../modelo/carrito.modelo';
+import { Producto as ProductoCarrito } from '../../modelo/carrito.modelo';
 
 @Component({
   selector: 'app-ver-producto',
@@ -16,7 +16,7 @@ export class VerProductoComponent implements OnInit {
   private readonly router = inject(ActivatedRoute);
   private readonly carritoService = inject(CarritoService);
 
-  public producto: Catalogo | null = null;
+  public producto: Producto | null = null;
   public idProducto: string = '';
   public cantidad = 1;
   public mostrarAlerta = false;
@@ -45,7 +45,7 @@ export class VerProductoComponent implements OnInit {
   }
 
   agregarAlCarrito() {
-    const nuevoProducto: Producto = {
+    const nuevoProducto: ProductoCarrito = {
       _id: this.idProducto,
       cantidad: this.cantidad,
       color: 'Rojo',

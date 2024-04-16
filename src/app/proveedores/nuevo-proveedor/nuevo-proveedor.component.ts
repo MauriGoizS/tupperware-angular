@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { catproveedor } from 'src/app/modelo/catproveedor';
+import { Proveedor } from 'src/app/modelo/catproveedor';
 import { NewProveedorService } from 'src/app/service/new-proveedor.service'; // Importa el servicio correcto
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
 
@@ -15,8 +15,8 @@ export class NuevoProveedorComponent {
     private router: Router,
     private newProveedorService: NewProveedorService // Inyecta el servicio correcto
   ) {}
-  
-  misproveedores: catproveedor = {
+
+  misproveedores: Proveedor = {
     _id: '',
     nombre: '',
     estado: '',

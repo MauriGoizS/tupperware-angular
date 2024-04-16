@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CatprovedorService } from 'src/app/service/catprovedor.service';
-import { catproveedor } from 'src/app/modelo/catproveedor';
+import { Proveedor } from 'src/app/modelo/catproveedor';
 
 @Component({
   selector: 'app-actualizar',
@@ -10,7 +10,7 @@ import { catproveedor } from 'src/app/modelo/catproveedor';
 })
 export class ActualizarComponentProveedor {
   provId: string | null = null;
-  proveedor: catproveedor | null = null;
+  proveedor: Proveedor | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,15 +18,15 @@ export class ActualizarComponentProveedor {
     private router: Router,
   ){}
 
-  
+
   ngOnInit(): void {
     this.provId = this.route.snapshot.paramMap.get('id');
     console.log('ID del proveedor a actualizar:', this.provId);
-    
+
     if (this.provId) {
       this.catprovservice.obtenerPorId(this.provId)
         .subscribe(
-          (proveedor: catproveedor) => {
+          (proveedor: Proveedor) => {
             this.proveedor = proveedor;
             console.log('proveedor obtenido:', this.proveedor);
           },
@@ -40,7 +40,7 @@ export class ActualizarComponentProveedor {
 actualizarProveedor(): void {
   if (this.provId && this.proveedor) {
     // Crear un objeto que contenga solo los campos modificados del producto
-    const proveedorActualizado: Partial<catproveedor> = {
+    const proveedorActualizado: Partial<Proveedor> = {
       nombre: this.proveedor.nombre,
       tel: this.proveedor.tel,
       rfc: this.proveedor.rfc,

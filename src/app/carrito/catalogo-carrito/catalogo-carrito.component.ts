@@ -13,6 +13,10 @@ export class CatalogoCarritoComponent {
   constructor(private catalagoCarrito: CarritoService) {}
 
   ngOnInit(): void {
+    this.obtenerListadoCarrito();
+  }
+
+  obtenerListadoCarrito() {
     this.catalagoCarrito
       .obtenerCatalogoCarrito()
 
@@ -21,4 +25,11 @@ export class CatalogoCarritoComponent {
         this.listaCatalogoCarrito = data;
       });
   }
+
+  borrarCarrito(id: string | undefined) {
+    this.catalagoCarrito.eliminar_carrito(id).subscribe(respuesta => {
+      console.log(respuesta);
+      this.obtenerListadoCarrito();
+    });
+  };
 }

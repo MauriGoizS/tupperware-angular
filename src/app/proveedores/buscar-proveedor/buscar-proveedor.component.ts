@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CatprovedorService } from 'src/app/service/catprovedor.service';
-import { catproveedor } from 'src/app/modelo/catproveedor';
+import { Proveedor } from 'src/app/modelo/catproveedor';
 
 
 @Component({
@@ -9,10 +9,10 @@ import { catproveedor } from 'src/app/modelo/catproveedor';
   styleUrls: ['./buscar-proveedor.component.css']
 })
 export class BuscarProveedorComponent {
-  listacatalogo: catproveedor[] = [];
+  listacatalogo: Proveedor[] = [];
 
   constructor(private catalogoservice: CatprovedorService ){}
-  
+
   buscarProductos(nombre: string): void {
     if (nombre.trim() !== '') { // Verifica que el nombre no esté vacío
       this.catalogoservice.obtenerPorNombre(nombre)

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { catproveedor } from '../modelo/catproveedor';
+import { Proveedor } from '../modelo/catproveedor';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class NewProveedorService {
 
   constructor(private http:HttpClient) { }
 
-  new_proovedor(miproveedor:catproveedor):Observable<any>{
+  new_proovedor(miproveedor:Proveedor):Observable<any>{
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.post<any>(this.apiUrl, miproveedor,{headers}).pipe(
       tap((res: any)=>{

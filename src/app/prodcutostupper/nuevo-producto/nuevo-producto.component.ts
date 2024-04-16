@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router'; // Importa Router
 import { catmarca } from 'src/app/modelo/catmarca';
-import { Catalogo, Clasificacion, Dimensiones } from 'src/app/modelo/catalogoprod.modelo';
+import { Producto, Clasificacion, Dimensiones } from 'src/app/modelo/catalogoprod.modelo';
 import { CatmarcaService } from 'src/app/service/catmarca.service';
 import { ProductocatalogoService } from 'src/app/service/productocatalogo.service';
 import { NewProductService } from 'src/app/service/new-product.service'; // Importa NewProductService
+import { CatprovedorService } from 'src/app/service/catprovedor.service';
+import { Proveedor } from 'src/app/modelo/catproveedor';
 
 @Component({
   selector: 'app-nuevo-producto',
   templateUrl: './nuevo-producto.component.html',
   styleUrls: ['./nuevo-producto.component.css']
 })
-export class NuevoProductoComponent {
+export class NuevoProductoComponent implements OnInit {
+  private readonly provedorService = inject(CatprovedorService);
+  proveedores: Proveedor[] = [];
+
   listaMarcas: catmarca[] = [];
   image: string = '';
 
@@ -35,8 +40,11 @@ export class NuevoProductoComponent {
 
   ngOnInit() {
     this.servicioMarc.obtenercat_marca().subscribe(data => {
-      console.log(data);
       this.listaMarcas = data;
+    });
+    this.provedorService.obtenercat_proveedor().subscribe( respuesta => {
+      this.proveedores = respuesta;
+      console.log(this.proveedores);
     });
   }
 
@@ -52,7 +60,7 @@ export class NuevoProductoComponent {
     capacidad: 0
   };
 
-  miproducto: Catalogo = {
+  miproducto: Producto = {
     _id: '',
     nombre: '',
     clasificacion: this.miclasificacion,
@@ -69,9 +77,9 @@ export class NuevoProductoComponent {
     ciudadanosRecomendados: 0,
     materialFabricacion: '',
     paisOrigen: 0,
-    proveedorId: 0,
     marcaId: '',
-    estado: ''
+    estado: '',
+    proveedor: null
   };
 
   get_id_marca(id: any) {

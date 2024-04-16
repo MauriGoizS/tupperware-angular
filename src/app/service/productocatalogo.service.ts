@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Catalogo } from '../modelo/catalogoprod.modelo';
+import { Producto } from '../modelo/catalogoprod.modelo';
 import { Observable , of} from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router'; // Importa Router
@@ -15,7 +15,7 @@ export class ProductocatalogoService {
   constructor(private http:HttpClient) { }
 
   obtenercatproducto(){
-    return this.http.get<Catalogo[]>(`${this.apiUrl}/productos/get_all`)
+    return this.http.get<Producto[]>(`${this.apiUrl}/productos/get_all`)
   }
 
   eliminar_prod(id:string | null){
@@ -23,12 +23,12 @@ export class ProductocatalogoService {
     return this.http.delete<any>(url)
   }
 
-  obtenerPorId(id: string): Observable<Catalogo> {
+  obtenerPorId(id: string): Observable<Producto> {
     const url = `${this.apiUrl}/productos/porID/${id}`;
-    return this.http.get<Catalogo>(url);
+    return this.http.get<Producto>(url);
   }
 
-  actualizarProducto(id: string, producto: Partial<Catalogo>): Observable<any> {
+  actualizarProducto(id: string, producto: Partial<Producto>): Observable<any> {
     const url = `${this.apiUrl}/productos/actualizar/${id}`;
     const headers = { 'Content-Type': 'application/json' };
 
@@ -40,9 +40,9 @@ export class ProductocatalogoService {
       );
   }
 
-  obtenerPorNombre(nombre:string): Observable<Catalogo> {
+  obtenerPorNombre(nombre:string): Observable<Producto> {
     const url =  `${this.apiUrl}/productos/porNombre/${nombre}`;
-    return this.http.get<Catalogo>(url); // Asegúrate de que estás devolviendo un Observable<catalogob>
+    return this.http.get<Producto>(url); // Asegúrate de que estás devolviendo un Observable<catalogob>
   }
 }
 

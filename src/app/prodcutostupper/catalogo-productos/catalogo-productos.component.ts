@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 
 import { ProductocatalogoService } from 'src/app/service/productocatalogo.service';
-import { Catalogo } from 'src/app/modelo/catalogoprod.modelo';
+import { Producto } from 'src/app/modelo/catalogoprod.modelo';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Catalogo } from 'src/app/modelo/catalogoprod.modelo';
   styleUrls: ['./catalogo-productos.component.css']
 })
 export class CatalogoProductosComponent {
-listacatalogo: Catalogo [] = [];
+listacatalogo: Producto [] = [];
 
 constructor(private catalogoservice: ProductocatalogoService ){}
 

@@ -1,4 +1,4 @@
-export interface catproveedor{
+export interface Proveedor{
     _id: string;
     nombre: string;
     estado: string;

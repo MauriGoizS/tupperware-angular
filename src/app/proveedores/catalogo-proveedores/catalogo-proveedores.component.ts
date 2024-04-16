@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 import { CatprovedorService } from 'src/app/service/catprovedor.service';
 
-import { catproveedor } from 'src/app/modelo/catproveedor';
+import { Proveedor } from 'src/app/modelo/catproveedor';
 
 
 @Component({
@@ -13,12 +13,12 @@ import { catproveedor } from 'src/app/modelo/catproveedor';
 })
 export class CatalogoProveedoresComponent {
 
-  listacatproveedor: catproveedor[]=[]
+  listacatproveedor: Proveedor[]=[]
   constructor(private catproveedor: CatprovedorService){}
 
   ngOnInit(): void{
     this.catproveedor.obtenercat_proveedor()
-    
+
     .subscribe(data =>{
       console.log(data);
       this.listacatproveedor=data;

@@ -42,7 +42,7 @@ export class CarritoService {
     let posEncontrada: number | undefined = undefined;
     this._carrito?.productos.forEach((producto, index) => {
       if (producto._id === verificarProducto._id) {
-        posEncontrada = index
+        posEncontrada = index;
       }
     });
     return posEncontrada;
@@ -54,14 +54,14 @@ export class CarritoService {
   }
 
   eliminarProductoDelCarrito(idProducto: string): void {
-    this._carrito!.productos = this._carrito?.productos.filter(prod => prod._id !== idProducto) || [];
+    this._carrito!.productos =
+      this._carrito?.productos.filter((prod) => prod._id !== idProducto) || [];
     localStorage.removeItem('carrito');
     if (this._carrito?.productos?.length === 0) {
-      this._carrito = null
+      this._carrito = null;
     }
     localStorage.setItem('carrito', JSON.stringify(this._carrito));
   }
-
 
   // HTTP requests
 
@@ -70,14 +70,23 @@ export class CarritoService {
   }
 
   realizarPedido() {
-    return this.http.post<CarritoModelo>(`${this.apiUrl}/carrito/nuevo`, this._carrito);
+    return this.http.post<CarritoModelo>(
+      `${this.apiUrl}/carrito/nuevo`,
+      this._carrito
+    );
   }
 
-  obtenerCatalogoCarrito(){
-    return this.http.get<CarritoModelo[]>(`${this.apiUrl}/carrito/get_all`)
+  obtenerCatalogoCarrito() {
+    return this.http.get<CarritoModelo[]>(`${this.apiUrl}/carrito/get_all`);
   }
 
-  eliminar_carrito(id:string | null){
-    return this.http.delete<any>(`${this.apiUrl}/carrito/eliminar/${id}`)
-    }
+  /**
+   * Elimina el carrito de la bd
+   * @param id: string
+   * @returns Observable
+   *
+   */
+  eliminar_carrito(id: string | undefined) {
+    return this.http.delete<any>(`${this.apiUrl}/carrito/eliminar/${id}`);
+  }
 }

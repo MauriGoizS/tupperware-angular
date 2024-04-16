@@ -47,7 +47,7 @@
               </table>
               </td>
               <td>
-                <a [routerLink]="['/eliminar-carrito', carrito._id]">
+                <a (click)="borrarCarrito(carrito._id)">
                   <i class="fas fa-trash-alt" style=" margin-right: 20px; color: red;"></i>
                 </a>
                 <a [routerLink]="['/buscar-carrito', carrito._id]">
