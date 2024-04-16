@@ -5,7 +5,7 @@ import { ProductocatalogoService } from 'src/app/service/productocatalogo.servic
 @Component({
   selector: 'app-productos-proveedor',
   templateUrl: './productos-proveedor.component.html',
-  styleUrls: ['./productos-proveedor.component.css']
+  styleUrls: ['./productos-proveedor.component.css'],
 })
 export class ProductosProveedorComponent {
   listaProductoPreveedor: Producto[] = [];
@@ -16,12 +16,15 @@ export class ProductosProveedorComponent {
     this.obtenerListadoProductoProveedor();
   }
 
+  // Método para obtener el listado de productos proveedor desde el servicio
   obtenerListadoProductoProveedor() {
+    // Llamada al método obtenercatproducto del servicio ProductocatalogoService
     this.productoProveedor
       .obtenercatproducto()
 
       .subscribe((data) => {
         console.log(data);
+        // Asignación de los datos obtenidos a la variable listaProductoPreveedor
         this.listaProductoPreveedor = data;
       });
   }

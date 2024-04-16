@@ -1,24 +1,28 @@
-<div class="container-transparente mt-5">
-  <h2>Formulario de Usuario</h2>
-  <form>
-      <div class="mb-3">
+<div class="tw-card">
+  <div class="mt-5">
+    <h2>Formulario de Usuario</h2>
+    <form>
+      <div class="mb-3 d-flex flex-column align-items-start justify-content-around">
         <label for="foto">Foto:</label>
         <input type="file" class="form-control-file" accept="image/*" (change)="convertir_B64($event)" id="foto">
       </div>
       <div class="mb-3">
-            <label for="nombre" class="form-label">Gmail</label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.gmail" name="Gmail" placeholder="Ingresa gmail">
-            <label for="nombre" class="form-label">Password</label>
-            <input type="password" class="form-control" id="nombre" [(ngModel)]="misUsuarios.password" name="password" placeholder="Ingresa password">
+        <label for="nombre" class="form-label">Gmail</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.gmail" name="Gmail"
+          placeholder="Ingresa gmail">
+        <label for="nombre" class="form-label">Password</label>
+        <input type="password" class="form-control" id="nombre" [(ngModel)]="misUsuarios.password" name="password"
+          placeholder="Ingresa password">
       </div>
       <div class="mb-3">
         <label for="nombre" class="form-label">Rol</label>
         <!-- <input type="text" class="form-control" id="nombre" [(ngModel)]="misUsuarios.rol" name="password" placeholder="Ingresa rol"> -->
-        <select id="Clasificación" class="form-control" [(ngModel)]="misUsuarios.rol" [ngModelOptions]="{standalone: true}">
+        <select id="Clasificación" class="form-control" [(ngModel)]="misUsuarios.rol"
+          [ngModelOptions]="{standalone: true}">
           <option value="Cliente">Cliente</option>
           <option value="Empleado">Empleado</option>
-      </select>
+        </select>
       </div>
       <button type="button" class="btn btn-primary" (click)="enviarUsuario()">Enviar</button>
-  </form>
-</div>
+    </form>
+  </div>
