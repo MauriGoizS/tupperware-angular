@@ -19,6 +19,7 @@
               <th>Nombre del proveedor</th>
               <th>Telefono del proveedor</th>
               <th>RFC de proveedor</th>
+              <th>Opciones</th>
           </tr>
           </thead>
           <tbody>
@@ -31,6 +32,13 @@
               <td>{{ productoProveedor.proveedor?.nombre}}</td>
               <td>{{ productoProveedor.proveedor?.tel}}</td>
               <td>{{ productoProveedor.proveedor?.rfc}}</td>
+              <td>
+                <div class="opciones">
+                  <a [routerLink]="['/productoseliminar', productoProveedor._id]">
+                      <i class="fas fa-trash-alt" style="color: red;"></i> <!-- Icono de bote de basura rojo -->
+                  </a>
+              </div>
+              </td>
           </tr>
 
           </tbody>

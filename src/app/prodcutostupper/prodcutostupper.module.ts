@@ -20,7 +20,7 @@ import { ProductosProveedorComponent } from './productos-proveedor/productos-pro
     ActualizarComponent,
     VerProductoComponent,
     EliminarComponent,
-    ProductosProveedorComponent
+    ProductosProveedorComponent,
   ],
   imports: [
     CommonModule,
